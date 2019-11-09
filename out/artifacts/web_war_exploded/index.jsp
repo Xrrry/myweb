@@ -2,33 +2,26 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title></title>
+    <title>登录</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/signin.css" rel="stylesheet">
 </head>
 <body>
-<script type="text/javascript">
-    function validate() {
-        var account = document.loginForm.account.value;
-        var password = document.loginForm.password.value;
-
-        if (account === "") {
-            alert("账号不能为空");
-            document.loginForm.account.focus();
-            return;
-        } else if (password === "") {
-            alert("密码不能为空");
-            document.loginForm.password.focus();
-            return;
-        }
-        loginForm.submit();
-    }
-</script>
-欢迎您登录：
-<form name="loginForm" action="test.jsp" method="post">
-    输入账号：<input name="account" type="text"><br>
-    输入密码：<input name="password" type="password"><br>
-    <input name="identity" type="radio" value="学生" checked>学生
-    <input name="identity" type="radio" value="教师" >教师<BR>
-    <input type="submit" onclick="validate()" value="登录">
-</form>
+<div class="container">
+    <form name="loginForm" action="test.jsp" method="post" class="form-signin">
+        <h2 class="form-signin-heading">请登录</h2>
+        <label class="sr-only">账号</label>
+        <input name="account" type="text" class="form-control" placeholder="账号" required autofocus><br>
+        <label class="sr-only">密码</label>
+        <input name="password" type="password" class="form-control" placeholder="密码" required>
+        <label class="radio-inline">
+        <input name="identity" type="radio" value="学生" checked>学生
+        </label>
+        <label class="radio-inline">
+        <input name="identity" type="radio" value="教师" >教师
+        </label>
+        <input class="btn btn-lg btn-primary btn-block" style="margin-top: 30px;" type="submit" value="登录">
+    </form>
+</div>
 </body>
 </html>

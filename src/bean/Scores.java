@@ -1,13 +1,15 @@
 package bean;
 
 
+import java.sql.Time;
+
 public class Scores {
 
   private long scoreId;
   private long studentNo;
   private long subjectNo;
   private long score;
-  private java.sql.Timestamp examDate;
+  private java.util.Date examDate;
 
 
   public long getScoreId() {
@@ -46,11 +48,11 @@ public class Scores {
   }
 
 
-  public java.sql.Timestamp getExamDate() {
+  public java.util.Date getExamDate() {
     return examDate;
   }
 
-  public void setExamDate(java.sql.Timestamp examDate) {
+  public void setExamDate(java.util.Date examDate) {
     this.examDate = examDate;
   }
 
