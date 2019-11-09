@@ -12,6 +12,7 @@ public class Students {
   private String idCardNo;
   private String address;
   private long gradeNo;
+  private long gender;
 
 
   public long getStudentId() {
@@ -85,12 +86,22 @@ public class Students {
     this.address = address;
   }
 
+
   public long getGradeNo() {
     return gradeNo;
   }
 
   public void setGradeNo(long gradeNo) {
     this.gradeNo = gradeNo;
+  }
+
+
+  public long getGender() {
+    return gender;
+  }
+
+  public void setGender(long gender) {
+    this.gender = gender;
   }
 
 }
