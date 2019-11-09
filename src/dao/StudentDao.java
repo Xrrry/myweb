@@ -33,8 +33,8 @@ public class StudentDao extends BaseDao{
         }
         return student;
     }
-    public List<Students> getStudentList(){
-        List<Students> ret = new ArrayList<Students>();
+    public ArrayList<Students> getStudentList(){
+        ArrayList<Students> ret = new ArrayList<Students>();
         String sql = "select * from students";
         ResultSet resultSet = query(sql);
         try {

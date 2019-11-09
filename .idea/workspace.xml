@@ -7,12 +7,32 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3a22c3d3-d83d-4ad8-8e65-21c24f379381" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/dao/BaseDao.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/dao/DbUtil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/css/bootstrap-theme.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/css/bootstrap-theme.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/css/bootstrap-theme.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/css/bootstrap-theme.min.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/css/bootstrap.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/css/bootstrap.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/css/bootstrap.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/css/bootstrap.min.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/css/cover.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/css/dashboard.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/css/signin.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/js/bootstrap.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/js/bootstrap.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/js/jquery-3.4.1.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/js/npm.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sqldialects.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/bean/Students.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/bean/Students.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/WEB-INF/classes/bean/Students.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/web_war_exploded/WEB-INF/classes/bean/Students.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/WEB-INF/classes/dao/StudentDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/web_war_exploded/WEB-INF/classes/dao/StudentDao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/web_war_exploded/WEB-INF/web.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/database.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/myweb/bean/Students.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/myweb/bean/Students.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/myweb/dao/StudentDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/myweb/dao/StudentDao.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/dao/StudentDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dao/StudentDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/web.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/database.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/students.jsp" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -98,7 +118,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="com.intellij.ide.scratch.LRUPopupBuilder$1/New Scratch File" value="SQL" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/dao" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/web/WEB-INF/lib/js" />
     <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -106,9 +126,12 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Admin\IdeaProjects\myweb\web" />
       <recent name="C:\Users\Admin\IdeaProjects\myweb\src" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Admin\IdeaProjects\myweb\web\WEB-INF\lib\js" />
+      <recent name="C:\Users\Admin\IdeaProjects\myweb\web\WEB-INF\lib\css" />
       <recent name="C:\Users\Admin\IdeaProjects\myweb\web\WEB-INF\lib" />
     </key>
   </component>
@@ -238,7 +261,7 @@
       <workItem from="1573284808667" duration="12000" />
       <workItem from="1573285018427" duration="4687000" />
       <workItem from="1573290904313" duration="987000" />
-      <workItem from="1573291927223" duration="1928000" />
+      <workItem from="1573291927223" duration="4636000" />
     </task>
     <servers />
   </component>
