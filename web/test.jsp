@@ -11,11 +11,12 @@
     <title>test</title>
 </head>
 <body>
-<%
-    String str = request.getParameter("account");
-    String str2 = request.getParameter("password");
-    out.print(str+"<br>");
-    out.print(str2);
+<% request.setCharacterEncoding("utf-8"); %>
+<% String account = request.getParameter("account");
+    out.println("<br>姓名：" + account + "<br>");
+    String password = request.getParameter("password");
+    out.println("<br>密码：" + password + "<br>");
 %>
+<br>账号:${param.account}<br><br>密码:${param.password}<br>
 </body>
 </html>

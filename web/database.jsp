@@ -13,7 +13,7 @@
 </head>
 <body>
 <%!
-    private static final String URL = "jdbc:mysql://localhost:3306/car_rental_system";
+    private static final String URL = "jdbc:mysql://localhost:3306/Student_System";
     private static final String USERNAME = "root";
     private static final String PWD = "xiaoruoruo1999";
 %>
@@ -27,33 +27,27 @@
     try{
         Class.forName("com.mysql.jdbc.Driver");
         c = DriverManager.getConnection(URL, USERNAME, PWD);
-        String sql = "select * from detail";
+        String sql = "select * from students";
         s = c.prepareStatement(sql);
         rs = s.executeQuery();
         %>
     <table border=1px cellspacing=0px >
         <tr>
-            <th>汽车编号</th>
-            <th>车型</th>
-            <th>车牌号</th>
-            <th>出厂日期</th>
-            <th>上次受检日期</th>
-            <th>油耗</th>
-            <th>公里数</th>
-            <th>价格(元/天)</th>
-            <th>租赁状态</th>
+            <th>姓名</th>
+            <th>邮箱</th>
+            <th>电话</th>
+            <th>学号</th>
+            <th>地址</th>
+            <th>年级</th>
         </tr>
         <%while(rs.next()){ %>
         <tr>
-            <td><%out.print(rs.getInt("CarNum"));%></td>
-            <td><%out.print(rs.getString("Model"));%></td>
-            <td><%out.print(rs.getString("LicenseNum"));%></td>
-            <td><%out.print(rs.getString("ProductionDate"));%></td>
-            <td><%out.print(rs.getString("LastInspectionDate"));%></td>
-            <td><%out.print(rs.getFloat("FuelConsumption"));%></td>
-            <td><%out.print(rs.getInt("Mileage"));%></td>
-            <td><%out.print(rs.getInt("Price"));%></td>
-            <td><%out.print(rs.getString("State"));%></td>
+            <td><%out.print(rs.getString("UserName"));%></td>
+            <td><%out.print(rs.getString("Email"));%></td>
+            <td><%out.print(rs.getString("Phone"));%></td>
+            <td><%out.print(rs.getString("IdCardNO"));%></td>
+            <td><%out.print(rs.getString("Address"));%></td>
+            <td><%out.print(rs.getInt("GradeNO"));%></td>
         </tr>
         <% } %>
     </table>
