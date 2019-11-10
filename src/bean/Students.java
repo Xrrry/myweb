@@ -3,7 +3,6 @@ package bean;
 
 public class Students {
 
-  private long studentId;
   private long studentNo;
   private String userName;
   private String password;
@@ -13,15 +12,6 @@ public class Students {
   private String address;
   private long gradeNo;
   private long gender;
-
-
-  public long getStudentId() {
-    return studentId;
-  }
-
-  public void setStudentId(long studentId) {
-    this.studentId = studentId;
-  }
 
 
   public long getStudentNo() {

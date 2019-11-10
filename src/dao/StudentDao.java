@@ -14,7 +14,6 @@ public class StudentDao extends BaseDao{
         try {
             if(resultSet.next()){
                 student = new Students();
-                student.setStudentId(resultSet.getInt("StudentId"));
                 student.setStudentNo(resultSet.getInt("StudentNO"));
                 student.setUserName(resultSet.getString("UserName"));
                 student.setPassword(resultSet.getString("password"));
@@ -39,7 +38,6 @@ public class StudentDao extends BaseDao{
         try {
             while(resultSet.next()){
                 Students s = new Students();
-                s.setStudentId(resultSet.getInt("StudentId"));
                 s.setStudentNo(resultSet.getInt("StudentNO"));
                 s.setUserName(resultSet.getString("UserName"));
                 s.setPassword(resultSet.getString("password"));

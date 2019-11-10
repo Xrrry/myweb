@@ -14,7 +14,6 @@ public class SubjectDao extends BaseDao{
         try {
             if(resultSet.next()){
                 subject = new Subjects();
-                subject.setSubjectId(resultSet.getInt("SubjectId"));
                 subject.setSubjectNo(resultSet.getInt("SubjectNo"));
                 subject.setSubjectName(resultSet.getString("SubjectName"));
                 subject.setClassHour(resultSet.getInt("ClassHour"));
@@ -34,7 +33,6 @@ public class SubjectDao extends BaseDao{
         try {
             while(resultSet.next()){
                 Subjects s = new Subjects();
-                s.setSubjectId(resultSet.getInt("SubjectId"));
                 s.setSubjectNo(resultSet.getInt("SubjectNo"));
                 s.setSubjectName(resultSet.getString("SubjectName"));
                 s.setClassHour(resultSet.getInt("ClassHour"));

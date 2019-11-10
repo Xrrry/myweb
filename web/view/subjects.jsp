@@ -3,11 +3,13 @@
 <%@ page import="dao.StudentDao" %>
 <%@ page import="bean.Students" %>
 <%@ page import="java.util.ArrayList" %>
+<%@ page import="bean.Subjects" %>
+<%@ page import="dao.SubjectDao" %>
 <html>
 <head>
-    <title>Students</title>
-    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"/>
-    <link rel="stylesheet" type="text/css" href="css/dashboard.css"/>
+    <title>课程列表</title>
+    <link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css"/>
+    <link rel="stylesheet" type="text/css" href="../css/dashboard.css"/>
 </head>
 <body>
 
@@ -37,55 +39,37 @@
     <div class="row">
         <div class="sidebar col-sm-3 col-md-2">
             <ul class="nav nav-sidebar">
-                <li class="active"><a href="">学生列表<span
+                <li><a href="">学生列表</a></li>
+                <li class="active"><a href="">院系列表<span
                         class="sr-only">(current)</span></a></li>
-                <li><a href="">年级列表</a></li>
+            </ul>
+            <ul class="nav nav-sidebar">
                 <li><a href="">选课列表</a></li>
+            </ul>
+            <ul class="nav nav-sidebar">
                 <li><a href="">成绩列表</a></li>
             </ul>
+
         </div>
     </div>
 </div>
 <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
     <div class="table-responsive" style="max-width: 1200px;margin: auto">
         <table align="center" class="table table-striped">
-            <caption>所有学生信息</caption>
+            <caption>所有院系信息</caption>
             <tr>
-                <th>学生编号</th>
-                <th>姓名</th>
-                <th>邮箱</th>
-                <th>电话</th>
-                <th>学号</th>
-                <th>地址</th>
-                <th>年级</th>
-                <th>性别</th>
+                <th>院系编号</th>
+                <th>院系姓名</th>
             </tr>
-            <% StudentDao sdao = new StudentDao();
-                ArrayList<Students> stus = sdao.getStudentList();
+            <% SubjectDao sdao = new SubjectDao();
+                ArrayList<Subjects> stus = sdao.getSubjectList();
                 for (int i = 0; i < stus.size(); i++) {
-                    Students stu = (Students) stus.get(i);
+                    Subjects sub = (Subjects) stus.get(i);
             %>
             <tr style="height: 52px;">
-                <td style="padding-top: 17px;"><%=stu.getStudentNo() %>
+                <td style="padding-top: 17px;"><%=sub.getSubjectNo() %>
                 </td>
-                <td style="padding-top: 17px;"><%=stu.getUserName() %>
-                </td>
-                <td style="padding-top: 17px;"><%=stu.getEmail() %>
-                </td>
-                <td style="padding-top: 17px;"><%=stu.getPhone() %>
-                </td>
-                <td style="padding-top: 17px;"><%=stu.getIdCardNo() %>
-                </td>
-                <td style="padding-top: 17px;"><%=stu.getAddress() %>
-                </td>
-                <td style="padding-top: 17px;"><%=stu.getGradeNo() %>
-                </td>
-                <td style="padding-top: 17px;"><% if(stu.getGender()==0){
-                    out.print('男');
-                }
-                else {
-                    out.print('女');
-                }%>
+                <td style="padding-top: 17px;"><%=sub.getSubjectName() %>
                 </td>
             </tr>
             <% } %>

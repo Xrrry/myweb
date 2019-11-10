@@ -7,22 +7,37 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3a22c3d3-d83d-4ad8-8e65-21c24f379381" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/dao/GradeDao.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/dao/ScoreDao.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/dao/SubjectDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/404.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/500.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/view/subjects.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sqldialects.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/WEB-INF/classes/bean/Scores.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/web_war_exploded/WEB-INF/classes/bean/Scores.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/WEB-INF/classes/bean/Grades.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/web_war_exploded/WEB-INF/classes/bean/Grades.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/WEB-INF/classes/bean/Students.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/web_war_exploded/WEB-INF/classes/bean/Students.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/WEB-INF/classes/bean/Subjects.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/web_war_exploded/WEB-INF/classes/bean/Subjects.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/WEB-INF/classes/dao/GradeDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/web_war_exploded/WEB-INF/classes/dao/GradeDao.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/WEB-INF/classes/dao/StudentDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/web_war_exploded/WEB-INF/classes/dao/StudentDao.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/web_war_exploded/index.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/students.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/web_war_exploded/students.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/myweb/bean/Scores.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/myweb/bean/Scores.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/WEB-INF/classes/dao/SubjectDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/web_war_exploded/WEB-INF/classes/dao/SubjectDao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/web_war_exploded/WEB-INF/web.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/index.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/students.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/test.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/myweb/bean/Grades.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/myweb/bean/Grades.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/myweb/bean/Students.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/myweb/bean/Students.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/myweb/bean/Subjects.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/myweb/bean/Subjects.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/myweb/dao/GradeDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/myweb/dao/GradeDao.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/myweb/dao/StudentDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/myweb/dao/StudentDao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/myweb/dao/SubjectDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/myweb/dao/SubjectDao.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/bean/Grades.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/bean/Grades.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/bean/Scores.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/bean/Scores.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/bean/Students.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/bean/Students.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/bean/Subjects.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/bean/Subjects.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/dao/GradeDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dao/GradeDao.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/dao/StudentDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dao/StudentDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/index.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/students.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/students.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/dao/SubjectDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dao/SubjectDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/web.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/view/login.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/students.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/view/students.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/test.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/view/test.jsp" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -63,8 +78,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Jsp File" />
         <option value="Class" />
+        <option value="jsf" />
+        <option value="Jsp File" />
       </list>
     </option>
   </component>
@@ -108,7 +124,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="com.intellij.ide.scratch.LRUPopupBuilder$1/New Scratch File" value="SQL" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/bean" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/web" />
     <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -116,11 +132,15 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Admin\IdeaProjects\myweb\web" />
+      <recent name="C:\Users\Admin\IdeaProjects\myweb\web\js" />
+      <recent name="C:\Users\Admin\IdeaProjects\myweb\web\css" />
+      <recent name="C:\Users\Admin\IdeaProjects\myweb\web\view" />
       <recent name="C:\Users\Admin\IdeaProjects\myweb\web\WEB-INF\lib\js" />
-      <recent name="C:\Users\Admin\IdeaProjects\myweb\web\WEB-INF\lib\css" />
-      <recent name="C:\Users\Admin\IdeaProjects\myweb\web\WEB-INF\lib" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Admin\IdeaProjects\myweb\web\css" />
+      <recent name="C:\Users\Admin\IdeaProjects\myweb\web\view" />
       <recent name="C:\Users\Admin\IdeaProjects\myweb\web" />
       <recent name="C:\Users\Admin\IdeaProjects\myweb\web\page" />
       <recent name="C:\Users\Admin\IdeaProjects\myweb\src" />
@@ -254,6 +274,9 @@
       <workItem from="1573290904313" duration="987000" />
       <workItem from="1573291927223" duration="4636000" />
       <workItem from="1573306064585" duration="6102000" />
+      <workItem from="1573356060844" duration="254000" />
+      <workItem from="1573359714294" duration="7049000" />
+      <workItem from="1573374589495" duration="2442000" />
     </task>
     <servers />
   </component>

@@ -3,20 +3,10 @@ package bean;
 
 public class Subjects {
 
-  private long subjectId;
   private long subjectNo;
   private String subjectName;
   private long classHour;
   private long gradeNo;
-
-
-  public long getSubjectId() {
-    return subjectId;
-  }
-
-  public void setSubjectId(long subjectId) {
-    this.subjectId = subjectId;
-  }
 
 
   public long getSubjectNo() {

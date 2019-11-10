@@ -3,12 +3,19 @@
 <html>
 <head>
     <title>登录</title>
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-    <link href="css/signin.css" rel="stylesheet">
+    <%
+        String path = request.getContextPath();
+        String basePath = request.getScheme()+"://"
+                +request.getServerName()+":"
+                +request.getServerPort()+path+"/";
+    %>
+
+    <link href="<%=basePath%>css/bootstrap.min.css" rel="stylesheet">
+    <link href="<%=basePath%>css/signin.css" rel="stylesheet">
 </head>
 <body>
 <div class="container">
-    <form name="loginForm" action="test.jsp" method="post" class="form-signin">
+    <form name="loginForm" action="<%=basePath%>view/students.jsp" method="post" class="form-signin">
         <h2 class="form-signin-heading">请登录</h2>
         <label class="sr-only">账号</label>
         <input name="account" type="text" class="form-control" placeholder="账号" required autofocus><br>

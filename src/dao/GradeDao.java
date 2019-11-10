@@ -14,7 +14,6 @@ public class GradeDao extends BaseDao{
         try {
             if(resultSet.next()){
                 grade = new Grades();
-                grade.setGradeId(resultSet.getInt("GradeId"));
                 grade.setGradeName(resultSet.getString("GradeName"));
                 grade.setGradeNo(resultSet.getInt("GradeNo"));
                 return grade;
@@ -32,7 +31,6 @@ public class GradeDao extends BaseDao{
         try {
             while(resultSet.next()){
                 Grades s = new Grades();
-                s.setGradeId(resultSet.getInt("GradeId"));
                 s.setGradeName(resultSet.getString("GradeName"));
                 s.setGradeNo(resultSet.getInt("GradeNo"));
                 ret.add(s);
