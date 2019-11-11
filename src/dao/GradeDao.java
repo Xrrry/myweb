@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import bean.Grades;
 
 public class GradeDao extends BaseDao{
-    public Grades getStudent(int id){
+    public Grades getGrade(int id){
         String sql = "select * from grades where GradeID = " + id;
         Grades grade = null;
         ResultSet resultSet = query(sql);
@@ -24,7 +24,7 @@ public class GradeDao extends BaseDao{
         }
         return grade;
     }
-    public ArrayList<Grades> getStudentList(){
+    public ArrayList<Grades> getGradeList(){
         ArrayList<Grades> ret = new ArrayList<Grades>();
         String sql = "select * from grades";
         ResultSet resultSet = query(sql);

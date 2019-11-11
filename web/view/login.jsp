@@ -3,29 +3,43 @@
 <html>
 <head>
     <title>登录</title>
-    <%
-        String path = request.getContextPath();
-        String basePath = request.getScheme()+"://"
-                +request.getServerName()+":"
-                +request.getServerPort()+path+"/";
-    %>
-
-    <link href="<%=basePath%>css/bootstrap.min.css" rel="stylesheet">
-    <link href="<%=basePath%>css/signin.css" rel="stylesheet">
+    <link href="<%=request.getContextPath()%>/css/bootstrap.min.css" rel="stylesheet">
+    <link href="<%=request.getContextPath()%>/css/signin.css" rel="stylesheet">
+    <script type="text/javascript">
+        function refresh() {
+            document.getElementById("imgValidate").src = "<%=request.getContextPath()%>/view/code.jsp?now="+Math.random();
+        }
+    </script>
+    <script>
+        var flag = '<%=request.getParameter("flag")%>';
+        if(flag == '1'){
+            alert("验证码错误");
+        }
+        else if(flag == '2') {
+            alert("账户名或密码错误");
+        }
+    </script>
 </head>
 <body>
 <div class="container">
-    <form name="loginForm" action="<%=basePath%>view/students.jsp" method="post" class="form-signin">
+    <form name="loginForm" action="<%=request.getContextPath()%>/LoginServlet" method="post" class="form-signin">
         <h2 class="form-signin-heading">请登录</h2>
         <label class="sr-only">账号</label>
         <input name="account" type="text" class="form-control" placeholder="账号" required autofocus><br>
         <label class="sr-only">密码</label>
-        <input name="password" type="password" class="form-control" placeholder="密码" required>
+        <input name="password" type="password" class="form-control" placeholder="密码" required><br>
+        <label class="sr-only">验证码</label>
+        <input name="code" type="password" class="form-control" placeholder="验证码" required>
+        <img id="imgValidate" src="<%=request.getContextPath()%>/view/code.jsp" onclick="refresh();" >
+        <a onclick="javascript:refresh();return false;" href="#" style="color:red;">看不清，换一张</a><br><br>
         <label class="radio-inline">
         <input name="identity" type="radio" value="学生" checked>学生
         </label>
         <label class="radio-inline">
         <input name="identity" type="radio" value="教师" >教师
+        </label>
+        <label class="radio-inline">
+            <input name="identity" type="radio" value="管理员" >管理员
         </label>
         <input class="btn btn-lg btn-primary btn-block" style="margin-top: 30px;" type="submit" value="登录">
     </form>

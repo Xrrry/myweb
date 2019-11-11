@@ -6,15 +6,25 @@
            version="4.0">
 
     <welcome-file-list>
-        <welcome-file>view/signin.jsp</welcome-file>
+        <welcome-file>view/login.jsp</welcome-file>
     </welcome-file-list>
 
-    <error-page>
-        <error-code>404</error-code>
-        <location>/404.jsp</location>
-    </error-page>
-    <error-page>
-        <error-code>500</error-code>
-        <location>/500.jsp</location>
-    </error-page>
+<!--    <error-page>-->
+<!--        <error-code>404</error-code>-->
+<!--        <location>/404.jsp</location>-->
+<!--    </error-page>-->
+<!--    <error-page>-->
+<!--        <error-code>500</error-code>-->
+<!--        <location>/500.jsp</location>-->
+<!--    </error-page>-->
+
+    <servlet>
+        <description>登录验证</description>
+        <servlet-name>LoginServlet</servlet-name>
+        <servlet-class>servlet.LoginServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>LoginServlet</servlet-name>
+        <url-pattern>/LoginServlet</url-pattern>
+    </servlet-mapping>
 </web-app>

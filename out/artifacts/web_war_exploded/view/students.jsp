@@ -5,7 +5,7 @@
 <%@ page import="java.util.ArrayList" %>
 <html>
 <head>
-    <title>Students</title>
+    <title>学生列表</title>
     <link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css"/>
     <link rel="stylesheet" type="text/css" href="../css/dashboard.css"/>
 </head>
@@ -24,7 +24,7 @@
         </div>
         <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav navbar-right">
-                <li><a href="">${param.account}</a></li>
+                <li><a href=""><%=session.getAttribute("account").toString()%></a></li>
                 <li><a href="">退出</a></li>
             </ul>
         </div>
@@ -36,9 +36,9 @@
     <div class="row">
         <div class="sidebar col-sm-3 col-md-2">
             <ul class="nav nav-sidebar">
-                <li class="active"><a href="">学生列表<span
+                <li class="active"><a href="students.jsp">学生列表<span
                         class="sr-only">(current)</span></a></li>
-                <li><a href="">院系列表</a></li>
+                <li><a href="grades.jsp">院系列表</a></li>
             </ul>
             <ul class="nav nav-sidebar">
                 <li><a href="">课程列表</a></li>
