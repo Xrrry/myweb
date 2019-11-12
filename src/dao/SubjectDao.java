@@ -47,4 +47,24 @@ public class SubjectDao extends BaseDao{
         }
         return ret;
     }
+    public ArrayList<Subjects> getTSubjectList(String gradeno){
+        ArrayList<Subjects> ret = new ArrayList<Subjects>();
+        String sql = "select * from subjects where GradeNO = '" + gradeno + "'";
+        ResultSet resultSet = query(sql);
+        try {
+            while(resultSet.next()){
+                Subjects s = new Subjects();
+                s.setSubjectNo(resultSet.getInt("SubjectNo"));
+                s.setSubjectName(resultSet.getString("SubjectName"));
+                s.setClassHour(resultSet.getInt("ClassHour"));
+                s.setGradeNo(resultSet.getInt("GradeNo"));
+                s.setGradeName(resultSet.getString("GradeName"));
+                ret.add(s);
+            }
+        } catch (SQLException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+        return ret;
+    }
 }

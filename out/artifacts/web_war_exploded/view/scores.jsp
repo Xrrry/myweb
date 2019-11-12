@@ -1,10 +1,6 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ page import="java.sql.*" %>
-<%@ page import="dao.StudentDao" %>
-<%@ page import="bean.Students" %>
 <%@ page import="java.util.ArrayList" %>
-<%@ page import="bean.Subjects" %>
-<%@ page import="dao.SubjectDao" %>
 <%@ page import="dao.ScoreDao" %>
 <%@ page import="bean.Scores" %>
 <html>
@@ -29,7 +25,7 @@
         </div>
         <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav navbar-right">
-                <li><a href=""><%=session.getAttribute("account").toString()%></a></li>
+                <li><a href=""><%=session.getAttribute("name").toString()%></a></li>
                 <li><a href="">退出</a></li>
             </ul>
         </div>
@@ -64,6 +60,7 @@
                 <th>课程</th>
                 <th>成绩</th>
                 <th>考试时间</th>
+                <th>操作</th>
             </tr>
             <%  ScoreDao sdao = new ScoreDao();
                 ArrayList<Scores> scos = sdao.getScoreList();
@@ -78,6 +75,16 @@
                 <td style="padding-top: 17px;"><%=sco.getScore() %>
                 </td>
                 <td style="padding-top: 17px;"><%=sco.getExamDate() %>
+                </td>
+                <td>
+                    <a href="">
+                        <button type="button"
+                                class="btn btn-primary">修改
+                        </button>
+                    </a>
+                    <button id="todelete" type="button" class="btn btn-danger">
+                        删除
+                    </button>
                 </td>
             </tr>
             <% } %>

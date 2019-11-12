@@ -1,10 +1,6 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ page import="java.sql.*" %>
-<%@ page import="dao.StudentDao" %>
-<%@ page import="bean.Students" %>
 <%@ page import="java.util.ArrayList" %>
-<%@ page import="bean.Subjects" %>
-<%@ page import="dao.SubjectDao" %>
 <%@ page import="dao.ChooseDao" %>
 <%@ page import="bean.Choose" %>
 <html>
@@ -29,7 +25,7 @@
         </div>
         <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav navbar-right">
-                <li><a href=""><%=session.getAttribute("account").toString()%></a></li>
+                <li><a href=""><%=session.getAttribute("name").toString()%></a></li>
                 <li><a href="">退出</a></li>
             </ul>
         </div>

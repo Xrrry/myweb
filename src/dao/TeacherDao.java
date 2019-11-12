@@ -8,7 +8,7 @@ import bean.Students;
 import bean.Teachers;
 
 public class TeacherDao extends BaseDao{
-    public Teachers getTeacher(int id){
+    public Teachers getTeacher(String id){
         String sql = "select * from teachers where TeacherNO = '" + id + "'";
         Teachers teachers = null;
         ResultSet resultSet = query(sql);

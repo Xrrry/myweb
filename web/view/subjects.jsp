@@ -1,7 +1,5 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ page import="java.sql.*" %>
-<%@ page import="dao.StudentDao" %>
-<%@ page import="bean.Students" %>
 <%@ page import="java.util.ArrayList" %>
 <%@ page import="bean.Subjects" %>
 <%@ page import="dao.SubjectDao" %>
@@ -27,7 +25,7 @@
         </div>
         <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav navbar-right">
-                <li><a href=""><%=session.getAttribute("account").toString()%></a></li>
+                <li><a href=""><%=session.getAttribute("name").toString()%></a></li>
                 <li><a href="">退出</a></li>
             </ul>
         </div>
@@ -62,6 +60,7 @@
                 <th>课程名</th>
                 <th>学时</th>
                 <th>所属院系</th>
+                <th>操作</th>
             </tr>
             <% SubjectDao sdao = new SubjectDao();
                 ArrayList<Subjects> subs = sdao.getSubjectList();
@@ -76,6 +75,16 @@
                 <td style="padding-top: 17px;"><%=sub.getClassHour() %>
                 </td>
                 <td style="padding-top: 17px;"><%=sub.getGradeName() %>
+                </td>
+                <td>
+                    <a href="">
+                        <button type="button"
+                                class="btn btn-primary">修改
+                        </button>
+                    </a>
+                    <button id="todelete" type="button" class="btn btn-danger">
+                        删除
+                    </button>
                 </td>
             </tr>
             <% } %>

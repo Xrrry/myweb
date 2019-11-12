@@ -1,16 +1,17 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ page import="java.sql.*" %>
+<%@ page import="dao.StudentDao" %>
+<%@ page import="bean.Students" %>
 <%@ page import="java.util.ArrayList" %>
-<%@ page import="dao.ChooseDao" %>
-<%@ page import="bean.Choose" %>
+<%@ page import="dao.SubjectDao" %>
+<%@ page import="bean.Subjects" %>
 <html>
 <head>
-    <title>选课列表</title>
+    <title>学生列表</title>
     <link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css"/>
     <link rel="stylesheet" type="text/css" href="../css/dashboard.css"/>
 </head>
 <body>
-
 <nav class="navbar navbar-inverse navbar-fixed-top">
     <div class="container-fluid">
         <div class="navbar-header">
@@ -25,7 +26,8 @@
         </div>
         <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav navbar-right">
-                <li><a href=""><%=session.getAttribute("name").toString()%></a></li>
+                <li><a href=""><%=session.getAttribute("name").toString()%>
+                </a></li>
                 <li><a href="">退出</a></li>
             </ul>
         </div>
@@ -37,15 +39,12 @@
     <div class="row">
         <div class="sidebar col-sm-3 col-md-2">
             <ul class="nav nav-sidebar">
-                <li><a href="students.jsp">学生列表</a></li>
-                <li><a href="grades.jsp">院系列表</a></li>
-                <li><a href="teachers.jsp">教师列表</a></li>
-                <li><a href="subjects.jsp">课程列表</a></li>
+                <li><a href="Tstudents.jsp">学生列表</a></li>
+                <li class="active"><a href="Tsubjects.jsp">课程列表<span
+                        class="sr-only">(current)</span></a></li>
             </ul>
             <ul class="nav nav-sidebar">
-                <li class="active"><a href="choose.jsp">选课列表<span
-                        class="sr-only">(current)</span></a></li>
-                <li><a href="scores.jsp">成绩列表</a></li>
+                <li><a href="Tscores.jsp">成绩列表</a></li>
             </ul>
 
         </div>
@@ -54,26 +53,26 @@
 <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
     <div class="table-responsive" style="max-width: 1200px;margin: auto">
         <table align="center" class="table table-striped">
-            <caption>所有选课信息</caption>
+            <caption>本院系课程信息</caption>
             <tr>
-                <th>学生编号</th>
-                <th>学生姓名</th>
                 <th>课程编号</th>
                 <th>课程名</th>
+                <th>学时</th>
+                <th>所属院系</th>
             </tr>
-            <% ChooseDao sdao = new ChooseDao();
-                ArrayList<Choose> chos = sdao.getChooseList();
-                for (int i = 0; i < chos.size(); i++) {
-                    Choose cho = (Choose) chos.get(i);
+            <% SubjectDao sdao = new SubjectDao();
+                ArrayList<Subjects> subs = sdao.getTSubjectList(session.getAttribute("GradeNO").toString());
+                for (int i = 0; i < subs.size(); i++) {
+                    Subjects sub = (Subjects) subs.get(i);
             %>
             <tr style="height: 52px;">
-                <td style="padding-top: 17px;"><%=cho.getStudentNo() %>
+                <td style="padding-top: 17px;"><%=sub.getSubjectNo() %>
                 </td>
-                <td style="padding-top: 17px;"><%=cho.getStudentName() %>
+                <td style="padding-top: 17px;"><%=sub.getSubjectName() %>
                 </td>
-                <td style="padding-top: 17px;"><%=cho.getSubjectNo() %>
+                <td style="padding-top: 17px;"><%=sub.getClassHour() %>
                 </td>
-                <td style="padding-top: 17px;"><%=cho.getSubjectName() %>
+                <td style="padding-top: 17px;"><%=sub.getGradeName() %>
                 </td>
             </tr>
             <% } %>

@@ -1,8 +1,6 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ page import="java.sql.*" %>
 <%@ page import="java.util.ArrayList" %>
-<%@ page import="dao.GradeDao" %>
-<%@ page import="bean.Grades" %>
 <%@ page import="dao.TeacherDao" %>
 <%@ page import="bean.Teachers" %>
 <html>
@@ -26,7 +24,7 @@
         </div>
         <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav navbar-right">
-                <li><a href=""><%=session.getAttribute("account").toString()%></a></li>
+                <li><a href=""><%=session.getAttribute("name").toString()%></a></li>
                 <li><a href="">退出</a></li>
             </ul>
         </div>
@@ -60,6 +58,7 @@
                 <th>教师编号</th>
                 <th>姓名</th>
                 <th>所属专业名称</th>
+                <th>操作</th>
             </tr>
             <% TeacherDao tdao = new TeacherDao();
                 ArrayList<Teachers> teas = tdao.getTeacherList();
@@ -72,6 +71,16 @@
                 <td style="padding-top: 17px;"><%=tea.getTeacherName() %>
                 </td>
                 <td style="padding-top: 17px;"><%=tea.getGradeName() %>
+                </td>
+                <td>
+                    <a href="">
+                        <button type="button"
+                                class="btn btn-primary">修改
+                        </button>
+                    </a>
+                    <button id="todelete" type="button" class="btn btn-danger">
+                        删除
+                    </button>
                 </td>
             </tr>
             <% } %>

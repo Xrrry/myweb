@@ -57,6 +57,7 @@
             <tr>
                 <th>学生编号</th>
                 <th>姓名</th>
+                <th>操作</th>
             </tr>
             <%  GradeDao gdao = new GradeDao();
                 ArrayList<Grades> gras = gdao.getGradeList();
@@ -67,6 +68,16 @@
                 <td style="padding-top: 17px;"><%=gra.getGradeNo() %>
                 </td>
                 <td style="padding-top: 17px;"><%=gra.getGradeName() %>
+                </td>
+                <td>
+                    <a href="">
+                        <button type="button"
+                                class="btn btn-primary">修改
+                        </button>
+                    </a>
+                    <button id="todelete" type="button" class="btn btn-danger">
+                        删除
+                    </button>
                 </td>
             </tr>
             <% } %>
