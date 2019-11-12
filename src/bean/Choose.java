@@ -6,6 +6,8 @@ public class Choose {
   private long chooseId;
   private long studentNo;
   private long subjectNo;
+  private String studentName;
+  private String subjectName;
 
 
   public long getChooseId() {
@@ -32,6 +34,18 @@ public class Choose {
 
   public void setSubjectNo(long subjectNo) {
     this.subjectNo = subjectNo;
+  }
+  public String getStudentName() {
+    return studentName;
+  }
+  public void setStudentName(String s) {
+    this.studentName = s;
+  }
+  public String getSubjectName() {
+    return subjectName;
+  }
+  public void setSubjectName(String s) {
+    this.subjectName = s;
   }
 
 }

@@ -41,12 +41,12 @@
             <ul class="nav nav-sidebar">
                 <li><a href="students.jsp">学生列表</a></li>
                 <li><a href="grades.jsp">院系列表</a></li>
-                <li><a href="">教师列表</a></li>
+                <li><a href="teachers.jsp">教师列表</a></li>
                 <li class="active"><a href="subjects.jsp">课程列表<span
                         class="sr-only">(current)</span></a></li>
             </ul>
             <ul class="nav nav-sidebar">
-                <li><a href="">选课列表</a></li>
+                <li><a href="choose.jsp">选课列表</a></li>
                 <li><a href="scores.jsp">成绩列表</a></li>
             </ul>
 
