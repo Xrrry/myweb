@@ -10,6 +10,8 @@ public class Scores {
   private long subjectNo;
   private long score;
   private java.util.Date examDate;
+  private String StudentName;
+  private String SubjectName;
 
 
   public long getScoreId() {
@@ -56,4 +58,16 @@ public class Scores {
     this.examDate = examDate;
   }
 
+  public String getStudentName() {
+    return StudentName;
+  }
+  public void setStudentName(String s) {
+    this.StudentName = s;
+  }
+  public String getSubjectName() {
+    return SubjectName;
+  }
+  public void setSubjectName(String s) {
+    this.SubjectName = s;
+  }
 }

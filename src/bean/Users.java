@@ -6,6 +6,7 @@ public class Users {
   private String account;
   private String password;
   private long type;
+  private long userNo;
 
 
   public String getAccount() {
@@ -32,6 +33,15 @@ public class Users {
 
   public void setType(long type) {
     this.type = type;
+  }
+
+
+  public long getUserNo() {
+    return userNo;
+  }
+
+  public void setUserNo(long userNo) {
+    this.userNo = userNo;
   }
 
 }

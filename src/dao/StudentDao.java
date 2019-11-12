@@ -8,7 +8,7 @@ import bean.Students;
 
 public class StudentDao extends BaseDao{
     public Students getStudent(int id){
-        String sql = "select * from students where StudentID = " + id;
+        String sql = "select * from students where StudentID = '" + id + "'";
         Students student = null;
         ResultSet resultSet = query(sql);
         try {

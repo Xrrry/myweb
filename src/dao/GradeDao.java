@@ -8,7 +8,7 @@ import bean.Grades;
 
 public class GradeDao extends BaseDao{
     public Grades getGrade(int id){
-        String sql = "select * from grades where GradeID = " + id;
+        String sql = "select * from grades where GradeID = '" + id + "'";
         Grades grade = null;
         ResultSet resultSet = query(sql);
         try {

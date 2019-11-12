@@ -37,14 +37,14 @@
         <div class="sidebar col-sm-3 col-md-2">
             <ul class="nav nav-sidebar">
                 <li><a href="students.jsp">学生列表</a></li>
-                <li class="active"><a href="">院系列表<span
+                <li class="active"><a href="grades.jsp">院系列表<span
                         class="sr-only">(current)</span></a></li>
+                <li><a href="">教师列表</a></li>
+                <li><a href="subjects.jsp">课程列表</a></li>
             </ul>
             <ul class="nav nav-sidebar">
-                <li><a href="grades.jsp">课程列表</a></li>
-            </ul>
-            <ul class="nav nav-sidebar">
-                <li><a href="">成绩列表</a></li>
+                <li><a href="">选课列表</a></li>
+                <li><a href="scores.jsp">成绩列表</a></li>
             </ul>
 
         </div>

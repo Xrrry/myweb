@@ -27,7 +27,7 @@
         </div>
         <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav navbar-right">
-                <li><a href="">Admin</a></li>
+                <li><a href=""><%=session.getAttribute("account").toString()%></a></li>
                 <li><a href="">退出</a></li>
             </ul>
         </div>
@@ -39,15 +39,15 @@
     <div class="row">
         <div class="sidebar col-sm-3 col-md-2">
             <ul class="nav nav-sidebar">
-                <li><a href="">学生列表</a></li>
-                <li class="active"><a href="">院系列表<span
+                <li><a href="students.jsp">学生列表</a></li>
+                <li><a href="grades.jsp">院系列表</a></li>
+                <li><a href="">教师列表</a></li>
+                <li class="active"><a href="subjects.jsp">课程列表<span
                         class="sr-only">(current)</span></a></li>
             </ul>
             <ul class="nav nav-sidebar">
                 <li><a href="">选课列表</a></li>
-            </ul>
-            <ul class="nav nav-sidebar">
-                <li><a href="">成绩列表</a></li>
+                <li><a href="scores.jsp">成绩列表</a></li>
             </ul>
 
         </div>
@@ -56,20 +56,26 @@
 <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
     <div class="table-responsive" style="max-width: 1200px;margin: auto">
         <table align="center" class="table table-striped">
-            <caption>所有院系信息</caption>
+            <caption>所有课程信息</caption>
             <tr>
-                <th>院系编号</th>
-                <th>院系姓名</th>
+                <th>课程编号</th>
+                <th>课程名</th>
+                <th>学时</th>
+                <th>所属院系</th>
             </tr>
             <% SubjectDao sdao = new SubjectDao();
-                ArrayList<Subjects> stus = sdao.getSubjectList();
-                for (int i = 0; i < stus.size(); i++) {
-                    Subjects sub = (Subjects) stus.get(i);
+                ArrayList<Subjects> subs = sdao.getSubjectList();
+                for (int i = 0; i < subs.size(); i++) {
+                    Subjects sub = (Subjects) subs.get(i);
             %>
             <tr style="height: 52px;">
                 <td style="padding-top: 17px;"><%=sub.getSubjectNo() %>
                 </td>
                 <td style="padding-top: 17px;"><%=sub.getSubjectName() %>
+                </td>
+                <td style="padding-top: 17px;"><%=sub.getClassHour() %>
+                </td>
+                <td style="padding-top: 17px;"><%=sub.getGradeName() %>
                 </td>
             </tr>
             <% } %>

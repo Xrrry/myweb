@@ -7,6 +7,7 @@ public class Subjects {
   private String subjectName;
   private long classHour;
   private long gradeNo;
+  private String gradeName;
 
 
   public long getSubjectNo() {
@@ -42,6 +43,15 @@ public class Subjects {
 
   public void setGradeNo(long gradeNo) {
     this.gradeNo = gradeNo;
+  }
+
+
+  public String getGradeName() {
+    return gradeName;
+  }
+
+  public void setGradeName(String gradeName) {
+    this.gradeName = gradeName;
   }
 
 }

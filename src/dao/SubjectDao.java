@@ -8,7 +8,7 @@ import bean.Subjects;
 
 public class SubjectDao extends BaseDao{
     public Subjects getSubject(int id){
-        String sql = "select * from subjects where SubjectID = " + id;
+        String sql = "select * from subjects where SubjectID = '" + id + "'";
         Subjects subject = null;
         ResultSet resultSet = query(sql);
         try {
@@ -18,6 +18,7 @@ public class SubjectDao extends BaseDao{
                 subject.setSubjectName(resultSet.getString("SubjectName"));
                 subject.setClassHour(resultSet.getInt("ClassHour"));
                 subject.setGradeNo(resultSet.getInt("GradeNo"));
+                subject.setGradeName(resultSet.getString("GradeName"));
                 return subject;
             }
         } catch (SQLException e) {
@@ -37,6 +38,7 @@ public class SubjectDao extends BaseDao{
                 s.setSubjectName(resultSet.getString("SubjectName"));
                 s.setClassHour(resultSet.getInt("ClassHour"));
                 s.setGradeNo(resultSet.getInt("GradeNo"));
+                s.setGradeName(resultSet.getString("GradeName"));
                 ret.add(s);
             }
         } catch (SQLException e) {

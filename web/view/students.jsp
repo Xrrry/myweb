@@ -39,12 +39,12 @@
                 <li class="active"><a href="students.jsp">学生列表<span
                         class="sr-only">(current)</span></a></li>
                 <li><a href="grades.jsp">院系列表</a></li>
+                <li><a href="">教师列表</a></li>
+                <li><a href="subjects.jsp">课程列表</a></li>
             </ul>
             <ul class="nav nav-sidebar">
-                <li><a href="">课程列表</a></li>
-            </ul>
-            <ul class="nav nav-sidebar">
-                <li><a href="">成绩列表</a></li>
+                <li><a href="">选课列表</a></li>
+                <li><a href="scores.jsp">成绩列表</a></li>
             </ul>
 
         </div>
@@ -57,12 +57,12 @@
             <tr>
                 <th>学生编号</th>
                 <th>姓名</th>
-                <th>邮箱</th>
-                <th>电话</th>
                 <th>学号</th>
-                <th>地址</th>
                 <th>年级</th>
                 <th>性别</th>
+                <th>邮箱</th>
+                <th>电话</th>
+                <th>地址</th>
             </tr>
             <% StudentDao sdao = new StudentDao();
                 ArrayList<Students> stus = sdao.getStudentList();
@@ -74,13 +74,7 @@
                 </td>
                 <td style="padding-top: 17px;"><%=stu.getUserName() %>
                 </td>
-                <td style="padding-top: 17px;"><%=stu.getEmail() %>
-                </td>
-                <td style="padding-top: 17px;"><%=stu.getPhone() %>
-                </td>
                 <td style="padding-top: 17px;"><%=stu.getIdCardNo() %>
-                </td>
-                <td style="padding-top: 17px;"><%=stu.getAddress() %>
                 </td>
                 <td style="padding-top: 17px;"><%=stu.getGradeNo() %>
                 </td>
@@ -91,6 +85,13 @@
                     out.print('女');
                 }%>
                 </td>
+                <td style="padding-top: 17px;"><%=stu.getEmail() %>
+                </td>
+                <td style="padding-top: 17px;"><%=stu.getPhone() %>
+                </td>
+                <td style="padding-top: 17px;"><%=stu.getAddress() %>
+                </td>
+
             </tr>
             <% } %>
         </table>
