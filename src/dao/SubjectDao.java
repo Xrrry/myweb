@@ -67,4 +67,14 @@ public class SubjectDao extends BaseDao{
         }
         return ret;
     }
+    public boolean deleteSubject(String subjectno) {
+        String sql = "delete from subjects where SubjectNO = '" + subjectno + "'";
+        try {
+            return update(sql);
+        }
+        finally {
+            closeCon();
+            return false;
+        }
+    }
 }

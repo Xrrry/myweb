@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import bean.Choose;
 
 public class ChooseDao extends BaseDao{
-    public Choose getChoose(int id){
+    public Choose getChoose(int id) throws SQLException {
         String sql = "select * from chooses where ChooseID = '" + id + "'";
         Choose choose = null;
         ResultSet resultSet = query(sql);
@@ -31,10 +31,13 @@ public class ChooseDao extends BaseDao{
         } catch (SQLException e) {
             // TODO Auto-generated catch block
             e.printStackTrace();
+        }finally {
+            closeCon();
+            if(resultSet!=null) resultSet.close();
         }
         return choose;
     }
-    public ArrayList<Choose> getChooseList(){
+    public ArrayList<Choose> getChooseList() throws SQLException {
         ArrayList<Choose> ret = new ArrayList<Choose>();
         String sql = "select * from scores";
         ResultSet resultSet = query(sql);
@@ -58,6 +61,9 @@ public class ChooseDao extends BaseDao{
         } catch (SQLException e) {
             // TODO Auto-generated catch block
             e.printStackTrace();
+        }finally {
+            closeCon();
+            if(resultSet!=null) resultSet.close();
         }
         return ret;
     }

@@ -28,10 +28,12 @@ public class TeacherDao extends BaseDao{
         } catch (SQLException e) {
             // TODO Auto-generated catch block
             e.printStackTrace();
+        }finally {
+            closeCon();
         }
         return teachers;
     }
-    public ArrayList<Teachers> getTeacherList(){
+    public ArrayList<Teachers> getTeacherList() throws SQLException {
         ArrayList<Teachers> ret = new ArrayList<Teachers>();
         String sql = "select * from teachers";
         ResultSet resultSet = query(sql);
@@ -51,7 +53,20 @@ public class TeacherDao extends BaseDao{
         } catch (SQLException e) {
             // TODO Auto-generated catch block
             e.printStackTrace();
+        }finally {
+            closeCon();
+            if(resultSet!=null) resultSet.close();
         }
         return ret;
+    }
+    public boolean deleteTeacher(String teacherno) {
+        String sql = "delete from teachers where TeacherNO = '" + teacherno + "'";
+        try {
+            return update(sql);
+        }
+        finally {
+            closeCon();
+            return false;
+        }
     }
 }

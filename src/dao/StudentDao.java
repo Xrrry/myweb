@@ -28,10 +28,12 @@ public class StudentDao extends BaseDao{
         } catch (SQLException e) {
             // TODO Auto-generated catch block
             e.printStackTrace();
+        }finally {
+            closeCon();
         }
         return student;
     }
-    public ArrayList<Students> getStudentList(){
+    public ArrayList<Students> getStudentList() throws SQLException {
         ArrayList<Students> ret = new ArrayList<Students>();
         String sql = "select * from students";
         ResultSet resultSet = query(sql);
@@ -52,11 +54,14 @@ public class StudentDao extends BaseDao{
         } catch (SQLException e) {
             // TODO Auto-generated catch block
             e.printStackTrace();
+        }finally {
+            closeCon();
+            if(resultSet!=null) resultSet.close();
         }
         return ret;
     }
 
-    public ArrayList<Students> getTStudentList(String gradeno) {
+    public ArrayList<Students> getTStudentList(String gradeno) throws SQLException {
         ArrayList<Students> ret = new ArrayList<Students>();
         String sql = "select * from students where GradeNO = '" + gradeno + "'";
         ResultSet resultSet = query(sql);
@@ -77,11 +82,20 @@ public class StudentDao extends BaseDao{
         } catch (SQLException e) {
             // TODO Auto-generated catch block
             e.printStackTrace();
+        }finally {
+            closeCon();
+            if(resultSet!=null) resultSet.close();
         }
         return ret;
     }
     public boolean deleteStudent(String studentno) {
         String sql = "delete from students where StudentNO = '" + studentno + "'";
-        return update(sql);
+        try {
+             return update(sql);
+        }
+        finally {
+            closeCon();
+            return false;
+        }
     }
 }

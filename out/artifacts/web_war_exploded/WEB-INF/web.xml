@@ -37,4 +37,44 @@
         <servlet-name>StudentServlet</servlet-name>
         <url-pattern>/StudentServlet</url-pattern>
     </servlet-mapping>
+
+    <servlet>
+        <description>院系操作</description>
+        <servlet-name>GradeServlet</servlet-name>
+        <servlet-class>servlet.GradeServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>GradeServlet</servlet-name>
+        <url-pattern>/GradeServlet</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <description>教师操作</description>
+        <servlet-name>TeacherServlet</servlet-name>
+        <servlet-class>servlet.TeacherServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>TeacherServlet</servlet-name>
+        <url-pattern>/TeacherServlet</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <description>课程操作</description>
+        <servlet-name>SubjectServlet</servlet-name>
+        <servlet-class>servlet.SubjectServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>SubjectServlet</servlet-name>
+        <url-pattern>/SubjectServlet</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <description>成绩操作</description>
+        <servlet-name>ScoreServlet</servlet-name>
+        <servlet-class>servlet.ScoreServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ScoreServlet</servlet-name>
+        <url-pattern>/ScoreServlet</url-pattern>
+    </servlet-mapping>
 </web-app>
