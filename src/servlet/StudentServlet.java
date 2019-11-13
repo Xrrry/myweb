@@ -8,6 +8,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
+import java.io.UnsupportedEncodingException;
 
 public class StudentServlet extends HttpServlet {
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException{
@@ -46,11 +47,34 @@ public class StudentServlet extends HttpServlet {
         response.sendRedirect(path + "/view/Ustudent.jsp");
     }
     private void updateStudent(HttpServletRequest request, HttpServletResponse response) throws IOException {
-        String id = request.getParameter("id");
+//        String id = request.getParameter("id");
+//        String path = request.getContextPath();
+//        StudentDao sdao = new StudentDao();
+//        Students s = sdao.getStudent(id);
+//        request.getSession().setAttribute("student",s);
+//        response.sendRedirect(path + "/view/Ustudent.jsp");
         String path = request.getContextPath();
+        HttpSession session = request.getSession();
+        Students s = new Students();
         StudentDao sdao = new StudentDao();
-        Students s = sdao.getStudent(id);
-        request.getSession().setAttribute("student",s);
-        response.sendRedirect(path + "/view/Ustudent.jsp");
+        Students students = (Students) session.getAttribute("student");
+        String StudentNO = String.valueOf(students.getStudentNo());
+        s.setUserName(transform("name",request));
+        s.setEmail(request.getParameter("email"));
+        s.setPhone(request.getParameter("phone"));
+        s.setIdCardNo(request.getParameter("idno"));
+        s.setAddress(transform("address",request));
+        if(sdao.updateStudent(StudentNO,s)){
+            response.sendRedirect(path +"/view/students.jsp");
+        }
+        else{
+            request.getSession().setAttribute("message","更新失败");
+            response.sendRedirect(path + "/view/error.jsp");
+        }
+    }
+    private String transform(String n, HttpServletRequest request) throws UnsupportedEncodingException {
+        String a = request.getParameter(n);
+        byte[] source = a.getBytes("ISO8859-1");
+        return new String(source, "UTF-8");
     }
 }

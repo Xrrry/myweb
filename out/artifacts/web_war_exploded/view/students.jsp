@@ -122,7 +122,7 @@
                 <td style="padding-top: 17px;"><%=stu.getAddress() %>
                 </td>
                 <td>
-                    <a href="<%=request.getContextPath()%>/StudentServlet?method=update&id=<%=stu.getStudentNo()%>" >
+                    <a href="<%=request.getContextPath()%>/StudentServlet?method=toUpdate&id=<%=stu.getStudentNo()%>" >
                         <button type="button"
                                 class="btn btn-primary">修改
                         </button>

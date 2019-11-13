@@ -56,7 +56,7 @@
             </ul>
         </div>
         <div>
-            <form method="post" >
+            <form method="post" action="<%=request.getContextPath()%>/StudentServlet?method=update">
                 <%
                     Students s = (Students) session.getAttribute("student");
                 %>
@@ -65,13 +65,28 @@
                     修改学生信息
                 </h2>
                 <div class="input-group form-signin" style="max-width: 400px;">
-                    <span class="input-group-addon" id="name">姓名</span>
-                    <input name="account" type="text" class="form-control" value="<%=s.getUserName()%>" required><br>
+                    <span class="input-group-addon">姓名</span>
+                    <input name="name" type="text" class="form-control" value="<%=s.getUserName()%>" required><br>
                 </div>
 
                 <div class="input-group form-signin" style="max-width: 400px;">
-                    <span class="input-group-addon" id="phone">电话</span>
-                    <input name="account" type="text" class="form-control" value="<%=s.getPhone()%>" required><br>
+                    <span class="input-group-addon">邮箱</span>
+                    <input name="email" type="text" class="form-control" value="<%=s.getEmail()%>" required><br>
+                </div>
+
+                <div class="input-group form-signin" style="max-width: 400px;">
+                    <span class="input-group-addon">电话</span>
+                    <input name="phone" type="text" class="form-control" value="<%=s.getPhone()%>" required><br>
+                </div>
+
+                <div class="input-group form-signin" style="max-width: 400px;">
+                    <span class="input-group-addon">学号</span>
+                    <input name="idno" type="text" class="form-control" value="<%=s.getIdCardNo()%>" required><br>
+                </div>
+
+                <div class="input-group form-signin" style="max-width: 400px;">
+                    <span class="input-group-addon">地址</span>
+                    <input name="address" type="text" class="form-control" value="<%=s.getAddress()%>" required><br>
                 </div>
 
                 <input style="margin-top:15px;max-width: 370px;" id="btn-submit" type="submit"

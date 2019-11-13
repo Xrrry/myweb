@@ -106,7 +106,16 @@ public class StudentDao extends BaseDao{
              return update(sql);
         } finally {
             closeCon();
-            return false;
+        }
+    }
+    public boolean updateStudent(String studentno, Students s) {
+        String sql = "update students set UserName = '" + s.getUserName() + "',Email = '" + s.getEmail() +
+                "',Phone='" + s.getPhone() + "',IdCardNO='" + s.getIdCardNo() + "',Address='" + s.getAddress()+
+                "' where StudentNO = '" + studentno + "'";
+        try{
+            return update(sql);
+        }finally {
+            closeCon();
         }
     }
 }
