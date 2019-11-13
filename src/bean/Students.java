@@ -5,13 +5,13 @@ public class Students {
 
   private long studentNo;
   private String userName;
-  private String password;
   private String email;
   private String phone;
   private String idCardNo;
   private String address;
   private long gradeNo;
   private long gender;
+  private String GradeName;
 
 
   public long getStudentNo() {
@@ -29,15 +29,6 @@ public class Students {
 
   public void setUserName(String userName) {
     this.userName = userName;
-  }
-
-
-  public String getPassword() {
-    return password;
-  }
-
-  public void setPassword(String password) {
-    this.password = password;
   }
 
 
@@ -92,6 +83,12 @@ public class Students {
 
   public void setGender(long gender) {
     this.gender = gender;
+  }
+  public String getGradeName() {
+    return GradeName;
+  }
+  public void setGradeName(String s) {
+    this.GradeName = s;
   }
 
 }

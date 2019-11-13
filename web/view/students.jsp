@@ -53,9 +53,10 @@
                 </ul>
             </div>
             <ul class="nav navbar-nav navbar-right">
-                <li><a href=""><%=session.getAttribute("name").toString()%>
-                </a></li>
-                <li><a href="">退出</a></li>
+                <li>
+                    <a href=""><%=session.getAttribute("name").toString()%></a>
+                </li>
+                <li><a href="<%=request.getContextPath()%>/view/login.jsp">退出</a></li>
             </ul>
         </div>
     </div>
@@ -87,7 +88,7 @@
                 <th>学生编号</th>
                 <th>姓名</th>
                 <th>学号</th>
-                <th>年级</th>
+                <th>院系</th>
                 <th>性别</th>
                 <th>邮箱</th>
                 <th>电话</th>
@@ -106,7 +107,7 @@
                 </td>
                 <td style="padding-top: 17px;"><%=stu.getIdCardNo() %>
                 </td>
-                <td style="padding-top: 17px;"><%=stu.getGradeNo() %>
+                <td style="padding-top: 17px;"><%=stu.getGradeName() %>
                 </td>
                 <td style="padding-top: 17px;"><% if (stu.getGender() == 0) {
                     out.print('男');
@@ -121,7 +122,7 @@
                 <td style="padding-top: 17px;"><%=stu.getAddress() %>
                 </td>
                 <td>
-                    <a href="">
+                    <a href="<%=request.getContextPath()%>/StudentServlet?method=toUpdate&id=<%=stu.getStudentNo()%>" >
                         <button type="button"
                                 class="btn btn-primary">修改
                         </button>
@@ -137,6 +138,8 @@
     </div>
 </div>
 <script type="text/javascript" src="../js/dropdown.js" ></script>
+<script type="text/javascript" src="../js/tooltip.js"></script>
+<script type="text/javascript" src="../js/popover.js"></script>
 <script src="../js/jquery-3.4.1.min.js"></script>
 <script src="../js/bootstrap.min.js"></script>
 <script type="text/javascript">

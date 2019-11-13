@@ -28,8 +28,7 @@
             <ul class="nav navbar-nav navbar-right">
                 <li><a href=""><%=session.getAttribute("name").toString()%>
                 </a></li>
-                <li><a href="">退出</a></li>
-            </ul>
+                <li><a href="<%=request.getContextPath()%>/view/login.jsp">退出</a></li>            </ul>
         </div>
     </div>
 </nav>

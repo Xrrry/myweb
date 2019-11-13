@@ -7,37 +7,42 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3a22c3d3-d83d-4ad8-8e65-21c24f379381" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/servlet/GradeServlet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/servlet/ScoreServlet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/servlet/SubjectServlet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/servlet/TeacherServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/js/jquery.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/js/popover.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/js/tooltip.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/view/Ustudent.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/WEB-INF/classes/dao/ChooseDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/web_war_exploded/WEB-INF/classes/dao/ChooseDao.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/WEB-INF/classes/dao/GradeDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/web_war_exploded/WEB-INF/classes/dao/GradeDao.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/WEB-INF/classes/dao/ScoreDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/web_war_exploded/WEB-INF/classes/dao/ScoreDao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/WEB-INF/classes/bean/Students.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/web_war_exploded/WEB-INF/classes/bean/Students.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/WEB-INF/classes/dao/StudentDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/web_war_exploded/WEB-INF/classes/dao/StudentDao.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/WEB-INF/classes/dao/SubjectDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/web_war_exploded/WEB-INF/classes/dao/SubjectDao.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/WEB-INF/classes/dao/TeacherDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/web_war_exploded/WEB-INF/classes/dao/TeacherDao.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/web_war_exploded/WEB-INF/web.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/WEB-INF/classes/servlet/ScoreServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/web_war_exploded/WEB-INF/classes/servlet/ScoreServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/WEB-INF/classes/servlet/StudentServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/web_war_exploded/WEB-INF/classes/servlet/StudentServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/view/Pscores.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/web_war_exploded/view/Pscores.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/view/Psubjects.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/web_war_exploded/view/Psubjects.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/view/Tscores.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/web_war_exploded/view/Tscores.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/view/Tstudents.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/web_war_exploded/view/Tstudents.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/view/Tsubjects.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/web_war_exploded/view/Tsubjects.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/view/choose.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/web_war_exploded/view/choose.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/view/grades.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/web_war_exploded/view/grades.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/view/scores.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/web_war_exploded/view/scores.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/view/students.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/web_war_exploded/view/students.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/view/subjects.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/web_war_exploded/view/subjects.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/view/teachers.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/web_war_exploded/view/teachers.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/myweb/dao/ChooseDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/myweb/dao/ChooseDao.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/myweb/dao/GradeDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/myweb/dao/GradeDao.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/myweb/dao/ScoreDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/myweb/dao/ScoreDao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/myweb/bean/Students.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/myweb/bean/Students.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/myweb/dao/StudentDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/myweb/dao/StudentDao.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/myweb/dao/SubjectDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/myweb/dao/SubjectDao.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/myweb/dao/TeacherDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/myweb/dao/TeacherDao.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/dao/ChooseDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dao/ChooseDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/dao/GradeDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dao/GradeDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/dao/ScoreDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dao/ScoreDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/myweb/servlet/ScoreServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/myweb/servlet/ScoreServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/myweb/servlet/StudentServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/myweb/servlet/StudentServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/bean/Students.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/bean/Students.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/dao/StudentDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dao/StudentDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/dao/SubjectDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dao/SubjectDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/dao/TeacherDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dao/TeacherDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/web.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/servlet/StudentServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/servlet/StudentServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/view/Pscores.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/view/Pscores.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/view/Psubjects.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/view/Psubjects.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/view/Tscores.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/view/Tscores.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/view/Tstudents.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/view/Tstudents.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/view/Tsubjects.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/view/Tsubjects.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/view/choose.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/view/choose.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/view/grades.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/view/grades.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/view/scores.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/view/scores.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/view/students.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/view/students.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/view/subjects.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/view/subjects.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/view/teachers.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/view/teachers.jsp" afterDir="false" />
     </list>
@@ -81,8 +86,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="jsf" />
-        <option value="Jsp File" />
         <option value="Class" />
+        <option value="Jsp File" />
       </list>
     </option>
   </component>
@@ -284,6 +289,8 @@
       <workItem from="1573525403967" duration="13261000" />
       <workItem from="1573545906344" duration="5613000" />
       <workItem from="1573554970133" duration="13282000" />
+      <workItem from="1573611407632" duration="4235000" />
+      <workItem from="1573618425620" duration="6239000" />
     </task>
     <servers />
   </component>

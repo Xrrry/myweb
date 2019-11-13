@@ -16,13 +16,17 @@ public class StudentDao extends BaseDao{
                 student = new Students();
                 student.setStudentNo(resultSet.getInt("StudentNO"));
                 student.setUserName(resultSet.getString("UserName"));
-                student.setPassword(resultSet.getString("password"));
                 student.setEmail(resultSet.getString("Email"));
                 student.setPhone(resultSet.getString("Phone"));
                 student.setIdCardNo(resultSet.getString("IdCardNo"));
                 student.setAddress(resultSet.getString("Address"));
                 student.setGradeNo(resultSet.getInt("GradeNo"));
                 student.setGender(resultSet.getInt("Gender"));
+                String sql1 = "select GradeName from grades where GradeNO = '" + resultSet.getInt("GradeNO") + "'";
+                ResultSet rs1 = query(sql1);
+                if(rs1.next()) {
+                    student.setGradeName(rs1.getString("GradeName"));
+                }
                 return student;
             }
         } catch (SQLException e) {
@@ -42,13 +46,17 @@ public class StudentDao extends BaseDao{
                 Students s = new Students();
                 s.setStudentNo(resultSet.getInt("StudentNO"));
                 s.setUserName(resultSet.getString("UserName"));
-                s.setPassword(resultSet.getString("password"));
                 s.setEmail(resultSet.getString("Email"));
                 s.setPhone(resultSet.getString("Phone"));
                 s.setIdCardNo(resultSet.getString("IdCardNo"));
                 s.setAddress(resultSet.getString("Address"));
                 s.setGradeNo(resultSet.getInt("GradeNo"));
                 s.setGender(resultSet.getInt("Gender"));
+                String sql1 = "select GradeName from grades where GradeNO = '" + resultSet.getInt("GradeNO") + "'";
+                ResultSet rs1 = query(sql1);
+                if(rs1.next()) {
+                    s.setGradeName(rs1.getString("GradeName"));
+                }
                 ret.add(s);
             }
         } catch (SQLException e) {
@@ -70,13 +78,17 @@ public class StudentDao extends BaseDao{
                 Students s = new Students();
                 s.setStudentNo(resultSet.getInt("StudentNO"));
                 s.setUserName(resultSet.getString("UserName"));
-                s.setPassword(resultSet.getString("password"));
                 s.setEmail(resultSet.getString("Email"));
                 s.setPhone(resultSet.getString("Phone"));
                 s.setIdCardNo(resultSet.getString("IdCardNo"));
                 s.setAddress(resultSet.getString("Address"));
                 s.setGradeNo(resultSet.getInt("GradeNo"));
                 s.setGender(resultSet.getInt("Gender"));
+                String sql1 = "select GradeName from grades where GradeNO = '" + resultSet.getInt("GradeNO") + "'";
+                ResultSet rs1 = query(sql1);
+                if(rs1.next()) {
+                    s.setGradeName(rs1.getString("GradeName"));
+                }
                 ret.add(s);
             }
         } catch (SQLException e) {
@@ -92,8 +104,7 @@ public class StudentDao extends BaseDao{
         String sql = "delete from students where StudentNO = '" + studentno + "'";
         try {
              return update(sql);
-        }
-        finally {
+        } finally {
             closeCon();
             return false;
         }
