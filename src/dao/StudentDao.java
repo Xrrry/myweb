@@ -34,6 +34,13 @@ public class StudentDao extends BaseDao{
             e.printStackTrace();
         }finally {
             closeCon();
+            if(resultSet!=null) {
+                try {
+                    resultSet.close();
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
+            }
         }
         return student;
     }

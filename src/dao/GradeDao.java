@@ -7,8 +7,8 @@ import java.util.ArrayList;
 import bean.Grades;
 
 public class GradeDao extends BaseDao{
-    public Grades getGrade(int id) throws SQLException {
-        String sql = "select * from grades where GradeID = '" + id + "'";
+    public Grades getGrade(String id){
+        String sql = "select * from grades where GradeNO = '" + id + "'";
         Grades grade = null;
         ResultSet resultSet = query(sql);
         try {
@@ -23,7 +23,13 @@ public class GradeDao extends BaseDao{
             e.printStackTrace();
         }finally {
             closeCon();
-            if(resultSet!=null) resultSet.close();
+            if(resultSet!=null) {
+                try {
+                    resultSet.close();
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
+            }
         }
         return grade;
     }
@@ -54,7 +60,14 @@ public class GradeDao extends BaseDao{
         }
         finally {
             closeCon();
-            return false;
+        }
+    }
+    public boolean updateGrade(String gradeno, Grades s) {
+        String sql = "update grades set GradeName = '" + s.getGradeName() + "' where GradeNO = '" + gradeno + "'";
+        try{
+            return update(sql);
+        }finally {
+            closeCon();
         }
     }
 }

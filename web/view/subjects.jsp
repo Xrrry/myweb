@@ -93,7 +93,7 @@
                 <td style="padding-top: 17px;"><%=sub.getGradeName() %>
                 </td>
                 <td>
-                    <a href="">
+                    <a href="<%=request.getContextPath()%>/SubjectServlet?method=toUpdate&id=<%=sub.getSubjectNo()%>" >
                         <button type="button"
                                 class="btn btn-primary">修改
                         </button>

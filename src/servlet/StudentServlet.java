@@ -47,12 +47,6 @@ public class StudentServlet extends HttpServlet {
         response.sendRedirect(path + "/view/Ustudent.jsp");
     }
     private void updateStudent(HttpServletRequest request, HttpServletResponse response) throws IOException {
-//        String id = request.getParameter("id");
-//        String path = request.getContextPath();
-//        StudentDao sdao = new StudentDao();
-//        Students s = sdao.getStudent(id);
-//        request.getSession().setAttribute("student",s);
-//        response.sendRedirect(path + "/view/Ustudent.jsp");
         String path = request.getContextPath();
         HttpSession session = request.getSession();
         Students s = new Students();

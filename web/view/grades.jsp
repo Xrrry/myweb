@@ -72,8 +72,8 @@
         <table align="center" class="table table-striped">
             <caption>所有院系信息</caption>
             <tr>
-                <th>学生编号</th>
-                <th>姓名</th>
+                <th>院系编号</th>
+                <th>院系名</th>
                 <th>操作</th>
             </tr>
             <%  GradeDao gdao = new GradeDao();
@@ -87,7 +87,7 @@
                 <td style="padding-top: 17px;"><%=gra.getGradeName() %>
                 </td>
                 <td>
-                    <a href="">
+                    <a href="<%=request.getContextPath()%>/GradeServlet?method=toUpdate&id=<%=gra.getGradeNo()%>" >
                         <button type="button"
                                 class="btn btn-primary">修改
                         </button>

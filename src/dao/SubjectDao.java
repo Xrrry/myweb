@@ -7,8 +7,8 @@ import java.util.ArrayList;
 import bean.Subjects;
 
 public class SubjectDao extends BaseDao{
-    public Subjects getSubject(int id){
-        String sql = "select * from subjects where SubjectID = '" + id + "'";
+    public Subjects getSubject(String id){
+        String sql = "select * from subjects where SubjectNO = '" + id + "'";
         Subjects subject = null;
         ResultSet resultSet = query(sql);
         try {
@@ -74,7 +74,14 @@ public class SubjectDao extends BaseDao{
         }
         finally {
             closeCon();
-            return false;
+        }
+    }
+    public boolean updateSubject(String subjectno, Subjects s) {
+        String sql = "update subjects set SubjectName = '" + s.getSubjectName() + "', ClassHour = '" + s.getClassHour() + "' where SubjectNO = '" + subjectno + "'";
+        try{
+            return update(sql);
+        }finally {
+            closeCon();
         }
     }
 }

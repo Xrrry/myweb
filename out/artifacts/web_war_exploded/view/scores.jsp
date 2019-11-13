@@ -93,7 +93,7 @@
                 <td style="padding-top: 17px;"><%=sco.getExamDate() %>
                 </td>
                 <td>
-                    <a href="">
+                    <a href="<%=request.getContextPath()%>/ScoreServlet?method=toUpdate&id=<%=sco.getScoreId()%>" >
                         <button type="button"
                                 class="btn btn-primary">修改
                         </button>

@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import bean.Scores;
 
 public class ScoreDao extends BaseDao{
-    public Scores getScore(int id) throws SQLException {
+    public Scores getScore(String id){
         String sql = "select * from scores where ScoreID = '" + id + "'";
         Scores score = null;
         ResultSet resultSet = query(sql);
@@ -26,7 +26,13 @@ public class ScoreDao extends BaseDao{
             e.printStackTrace();
         }finally {
             closeCon();
-            if(resultSet!=null) resultSet.close();
+            if(resultSet!=null) {
+                try {
+                    resultSet.close();
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
+            }
         }
         return score;
     }
@@ -137,6 +143,14 @@ public class ScoreDao extends BaseDao{
         finally {
             closeCon();
             return false;
+        }
+    }
+    public boolean updateScore(String scoreid, Scores s) {
+        String sql = "update scores set Score = '" + s.getScore() + "' where ScoreID = '" + scoreid + "'";
+        try{
+            return update(sql);
+        }finally {
+            closeCon();
         }
     }
 }

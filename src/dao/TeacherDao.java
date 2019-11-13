@@ -66,7 +66,14 @@ public class TeacherDao extends BaseDao{
         }
         finally {
             closeCon();
-            return false;
+        }
+    }
+    public boolean updateTeacher(String teacherno, Teachers s) {
+        String sql = "update teachers set TeacherName = '" + s.getTeacherName() + "' where TeacherNO = '" + teacherno + "'";
+        try{
+            return update(sql);
+        }finally {
+            closeCon();
         }
     }
 }

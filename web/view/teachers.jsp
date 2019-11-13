@@ -90,7 +90,7 @@
                 <td style="padding-top: 17px;"><%=tea.getGradeName() %>
                 </td>
                 <td>
-                    <a href="">
+                    <a href="<%=request.getContextPath()%>/TeacherServlet?method=toUpdate&id=<%=tea.getTeacherNo()%>" >
                         <button type="button"
                                 class="btn btn-primary">修改
                         </button>
