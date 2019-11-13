@@ -125,4 +125,14 @@ public class StudentDao extends BaseDao{
             closeCon();
         }
     }
+    public boolean insertStudent(Students s) {
+        String values = "('" + s.getUserName() + "','" + s.getEmail() + "','" + s.getPhone() + "','" + s.getIdCardNo() + "','"
+                + s.getAddress() + "','" + s.getGradeNo() + "','" + s.getGender() + "')";
+        String sql = "insert into students (UserName,Email,Phone,IdCardNO,Address,GradeNO,Gender) values " + values;
+        try {
+            return update(sql);
+        }finally {
+            closeCon();
+        }
+    }
 }

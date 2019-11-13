@@ -46,7 +46,7 @@
                     添加 <span class="caret"></span>
                 </button>
                 <ul class="dropdown-menu">
-                    <li><a href="#">学生</a></li>
+                    <li><a href="Nstudent.jsp">学生</a></li>
                     <li><a href="#">院系</a></li>
                     <li><a href="#">教师</a></li>
                     <li><a href="#">课程</a></li>

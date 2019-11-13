@@ -25,6 +25,9 @@ public class StudentServlet extends HttpServlet {
         else if("update".equals(method)) {
             updateStudent(request,response);
         }
+        else if("insert".equals(method)){
+            insertStudent(request,response);
+        }
     }
     private void deleteStudent(HttpServletRequest request, HttpServletResponse response) throws IOException {
         String id = request.getParameter("id");
@@ -70,5 +73,24 @@ public class StudentServlet extends HttpServlet {
         String a = request.getParameter(n);
         byte[] source = a.getBytes("ISO8859-1");
         return new String(source, "UTF-8");
+    }
+    private void insertStudent(HttpServletRequest request, HttpServletResponse response) throws IOException {
+        Students s = new Students();
+        StudentDao sdao = new StudentDao();
+        String path = request.getContextPath();
+        s.setUserName(transform("name",request));
+        s.setEmail(request.getParameter("email"));
+        s.setPhone(request.getParameter("phone"));
+        s.setIdCardNo(request.getParameter("idno"));
+        s.setAddress(transform("address",request));
+        s.setGradeNo(Integer.parseInt(request.getParameter("gradeno")));
+        s.setGender(Integer.parseInt(request.getParameter("gender")));
+        if(sdao.insertStudent(s)) {
+            response.sendRedirect(path + "/view/students.jsp");
+        }
+        else {
+            request.getSession().setAttribute("message","添加失败");
+            response.sendRedirect(path + "/view/error.jsp");
+        }
     }
 }
