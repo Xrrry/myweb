@@ -110,8 +110,7 @@
                 <th>地址</th>
                 <th>操作</th>
             </tr>
-            <% StudentDao sdao = new StudentDao();
-                ArrayList<Students> stus = sdao.getStudentList();
+            <%  ArrayList<Students> stus = (ArrayList<Students>)session.getAttribute("sstu");
                 for (int i = 0; i < stus.size(); i++) {
                     Students stu = (Students) stus.get(i);
             %>

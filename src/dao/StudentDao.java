@@ -107,6 +107,40 @@ public class StudentDao extends BaseDao{
         }
         return ret;
     }
+    public ArrayList<Students> searchStudent(String info) throws SQLException {
+        ArrayList<Students> ret = new ArrayList<Students>();
+        String value = "StudentNO='" + info + "'or UserName like '%" + info + "%'or Email like '%" + info +
+                "%'or Phone like '%" + info + "%'or IdCardNO like '%" + info + "%'or Address like '%" + info +
+                "%'or GradeNO='" + info + "'";
+        String sql = "select * from students where " + value;
+        ResultSet resultSet = query(sql);
+        try {
+            while(resultSet.next()){
+                Students s = new Students();
+                s.setStudentNo(resultSet.getInt("StudentNO"));
+                s.setUserName(resultSet.getString("UserName"));
+                s.setEmail(resultSet.getString("Email"));
+                s.setPhone(resultSet.getString("Phone"));
+                s.setIdCardNo(resultSet.getString("IdCardNo"));
+                s.setAddress(resultSet.getString("Address"));
+                s.setGradeNo(resultSet.getInt("GradeNo"));
+                s.setGender(resultSet.getInt("Gender"));
+                String sql1 = "select GradeName from grades where GradeNO = '" + resultSet.getInt("GradeNO") + "'";
+                ResultSet rs1 = query(sql1);
+                if(rs1.next()) {
+                    s.setGradeName(rs1.getString("GradeName"));
+                }
+                ret.add(s);
+            }
+        } catch (SQLException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }finally {
+            closeCon();
+            if(resultSet!=null) resultSet.close();
+        }
+        return ret;
+    }
     public boolean deleteStudent(String studentno) {
         String sql = "delete from students where StudentNO = '" + studentno + "'";
         try {

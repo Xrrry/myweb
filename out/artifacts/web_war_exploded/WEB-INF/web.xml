@@ -77,4 +77,14 @@
         <servlet-name>ScoreServlet</servlet-name>
         <url-pattern>/ScoreServlet</url-pattern>
     </servlet-mapping>
+
+    <servlet>
+        <description>搜索操作</description>
+        <servlet-name>SearchServlet</servlet-name>
+        <servlet-class>servlet.SearchServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>SearchServlet</servlet-name>
+        <url-pattern>/SearchServlet</url-pattern>
+    </servlet-mapping>
 </web-app>
