@@ -26,6 +26,9 @@ public class GradeServlet extends HttpServlet {
         else if("update".equals(method)) {
             updateGrade(request,response);
         }
+        else if("insert".equals(method)) {
+            insertGrade(request,response);
+        }
     }
     private void deleteGrade(HttpServletRequest request, HttpServletResponse response) throws IOException {
         String id = request.getParameter("id");
@@ -62,5 +65,18 @@ public class GradeServlet extends HttpServlet {
         String a = request.getParameter(n);
         byte[] source = a.getBytes("ISO8859-1");
         return new String(source, "UTF-8");
+    }
+    private void insertGrade(HttpServletRequest request, HttpServletResponse response) throws IOException {
+        Grades g = new Grades();
+        GradeDao gdao = new GradeDao();
+        String path = request.getContextPath();
+        g.setGradeName(transform("name",request));
+        if(gdao.insertGrade(g)) {
+            response.sendRedirect(path + "/view/grades.jsp");
+        }
+        else{
+            request.getSession().setAttribute("message","添加失败");
+            response.sendRedirect(path + "/view/error.jsp");
+        }
     }
 }

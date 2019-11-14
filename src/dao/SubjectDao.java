@@ -84,4 +84,13 @@ public class SubjectDao extends BaseDao{
             closeCon();
         }
     }
+    public boolean insertSubject(Subjects s) {
+        String value = "('" + s.getSubjectName() + "','" + s.getClassHour() + "','" + s.getGradeNo() + "','" + s.getGradeName() + "')";
+        String sql = "insert into subjects (SubjectName,ClassHour,GradeNO,GradeName) values " + value;
+        try {
+            return update(sql);
+        }finally {
+            closeCon();
+        }
+    }
 }

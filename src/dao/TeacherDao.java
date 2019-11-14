@@ -76,4 +76,13 @@ public class TeacherDao extends BaseDao{
             closeCon();
         }
     }
+    public boolean insertTeacher(Teachers t) {
+        String value = "('" + t.getTeacherName() + "','" + t.getGradeNo() + "')";
+        String sql = "insert into teachers (TeacherName,GradeNO) values " + value;
+        try {
+            return update(sql);
+        }finally {
+            closeCon();
+        }
+    }
 }

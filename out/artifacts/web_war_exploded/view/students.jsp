@@ -47,9 +47,9 @@
                 </button>
                 <ul class="dropdown-menu">
                     <li><a href="Nstudent.jsp">学生</a></li>
-                    <li><a href="#">院系</a></li>
-                    <li><a href="#">教师</a></li>
-                    <li><a href="#">课程</a></li>
+                    <li><a href="Ngrade.jsp">院系</a></li>
+                    <li><a href="Nteacher.jsp">教师</a></li>
+                    <li><a href="Nsubject.jsp">课程</a></li>
                 </ul>
             </div>
             <ul class="nav navbar-nav navbar-right">

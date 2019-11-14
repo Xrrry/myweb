@@ -1,6 +1,7 @@
 package servlet;
 
 import bean.Teachers;
+import dao.GradeDao;
 import dao.TeacherDao;
 
 import javax.servlet.http.HttpServlet;
@@ -24,6 +25,9 @@ public class TeacherServlet extends HttpServlet {
         }
         else if("update".equals(method)) {
             updateTeacher(request,response);
+        }
+        else if("insert".equals(method)) {
+            insertTeacher(request,response);
         }
     }
     private void deleteTeacher(HttpServletRequest request, HttpServletResponse response) throws IOException {
@@ -62,5 +66,22 @@ public class TeacherServlet extends HttpServlet {
         String a = request.getParameter(n);
         byte[] source = a.getBytes("ISO8859-1");
         return new String(source, "UTF-8");
+    }
+    private void insertTeacher(HttpServletRequest request, HttpServletResponse response) throws IOException {
+        Teachers t = new Teachers();
+        TeacherDao tdao = new TeacherDao();
+        GradeDao gdao = new GradeDao();
+        String path = request.getContextPath();
+        String id = request.getParameter("grade");
+        t.setTeacherName(transform("name",request));
+        t.setGradeNo(Integer.parseInt(id));
+        t.setGradeName(gdao.getGrade(id).getGradeName());
+        if(tdao.insertTeacher(t)) {
+            response.sendRedirect(path + "/view/teachers.jsp");
+        }
+        else{
+            request.getSession().setAttribute("message","添加失败");
+            response.sendRedirect(path + "/view/error.jsp");
+        }
     }
 }

@@ -70,4 +70,12 @@ public class GradeDao extends BaseDao{
             closeCon();
         }
     }
+    public boolean insertGrade(Grades g) {
+        String sql = "insert into grades (GradeName) values ('" + g.getGradeName() + "')";
+        try {
+            return  update(sql);
+        }finally {
+            closeCon();
+        }
+    }
 }

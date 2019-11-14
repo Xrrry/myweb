@@ -1,8 +1,8 @@
 package servlet;
 
 import bean.Subjects;
+import dao.GradeDao;
 import dao.SubjectDao;
-import dao.TeacherDao;
 
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -25,6 +25,9 @@ public class SubjectServlet extends HttpServlet {
         }
         else if("update".equals(method)) {
             updateSubject(request,response);
+        }
+        else if("insert".equals(method)) {
+            insertSubject(request,response);
         }
     }
     private void deleteStudent(HttpServletRequest request, HttpServletResponse response) throws IOException {
@@ -63,5 +66,23 @@ public class SubjectServlet extends HttpServlet {
         String a = request.getParameter(n);
         byte[] source = a.getBytes("ISO8859-1");
         return new String(source, "UTF-8");
+    }
+    private void insertSubject(HttpServletRequest request, HttpServletResponse response) throws IOException {
+        Subjects s = new Subjects();
+        SubjectDao sdao = new SubjectDao();
+        GradeDao gdao = new GradeDao();
+        String path = request.getContextPath();
+        String id = request.getParameter("grade");
+        s.setSubjectName(transform("name",request));
+        s.setClassHour(Long.parseLong(request.getParameter("hour")));
+        s.setGradeNo(Long.parseLong(request.getParameter("grade")));
+        s.setGradeName(gdao.getGrade(id).getGradeName());
+        if(sdao.insertSubject(s)){
+            response.sendRedirect(path + "/view/subjects.jsp");
+        }
+        else{
+            request.getSession().setAttribute("message","添加失败");
+            response.sendRedirect(path + "/view/error.jsp");
+        }
     }
 }
