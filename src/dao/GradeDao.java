@@ -82,6 +82,33 @@ public class GradeDao extends BaseDao{
         }
         return ret;
     }
+    public ArrayList<Grades> searchGrade(String info) {
+        ArrayList<Grades> ret = new ArrayList<Grades>();
+        String value = "GradeNO='" + info + "' or GradeName like '%" + info + "%'";
+        String sql = "select * from grades where " + value;
+        ResultSet resultSet = query(sql);
+        try {
+            while(resultSet.next()){
+                Grades s = new Grades();
+                s.setGradeName(resultSet.getString("GradeName"));
+                s.setGradeNo(resultSet.getInt("GradeNo"));
+                ret.add(s);
+            }
+        } catch (SQLException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }finally {
+            closeCon();
+            if(resultSet!=null) {
+                try {
+                    resultSet.close();
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+        return ret;
+    }
     public boolean deleteGrade(String gradeno) {
         String sql = "delete from grades where GradeNO = '" + gradeno + "'";
         try {

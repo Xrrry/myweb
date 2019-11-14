@@ -41,7 +41,7 @@
             <a class="navbar-brand" href="">学生管理系统</a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
-            <form method="post" class="navbar-form navbar-left" style="margin-left: 710px" action="<%=request.getContextPath()%>/SearchServlet">
+            <form method="post" class="navbar-form navbar-left" style="margin-left: 710px" action="<%=request.getContextPath()%>/SearchServlet?from=admin">
                 <div class="input-group form-signin" style="max-width: 200px;">
                     <span class="input-group-addon">搜索对象</span>
                     <select name="type" class="form-control">

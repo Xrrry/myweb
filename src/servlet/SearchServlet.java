@@ -1,7 +1,7 @@
 package servlet;
 
-import bean.Students;
-import dao.StudentDao;
+import bean.*;
+import dao.*;
 
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -75,24 +75,50 @@ public class SearchServlet extends HttpServlet {
         request.getSession().setAttribute("sstu",stus);
         response.sendRedirect(path +"/view/Sstudent.jsp");
     }
-    private void searchGrade(HttpServletRequest request,HttpServletResponse response) throws UnsupportedEncodingException, SQLException {
+    private void searchGrade(HttpServletRequest request,HttpServletResponse response) throws IOException, SQLException {
         String info = transform("info",request);
         String path = request.getContextPath();
+        GradeDao gdao = new GradeDao();
+        ArrayList<Grades> gras = gdao.searchGrade(info);
+        request.getSession().setAttribute("sgra",gras);
+        response.sendRedirect(path +"/view/Sgrade.jsp");
     }
-    private void searchTeacher(HttpServletRequest request,HttpServletResponse response) throws UnsupportedEncodingException, SQLException {
+    private void searchTeacher(HttpServletRequest request,HttpServletResponse response) throws IOException, SQLException {
         String info = transform("info",request);
         String path = request.getContextPath();
+        TeacherDao tdao = new TeacherDao();
+        ArrayList<Teachers> stea = tdao.searchTeacher(info);
+        request.getSession().setAttribute("stea",stea);
+        response.sendRedirect(path +"/view/Steacher.jsp");
     }
-    private void searchSubject(HttpServletRequest request,HttpServletResponse response) throws UnsupportedEncodingException, SQLException {
+    private void searchSubject(HttpServletRequest request,HttpServletResponse response) throws IOException, SQLException {
         String info = transform("info",request);
         String path = request.getContextPath();
+        SubjectDao sdao = new SubjectDao();
+        ArrayList<Subjects> ssub = sdao.searchSubject(info);
+        request.getSession().setAttribute("ssub",ssub);
+        String from = transform("from",request);
+        if("admin".equals(from)) {
+            response.sendRedirect(path +"/view/Ssubject.jsp");
+        }
+        else if ("student".equals(from)){
+            response.sendRedirect(path +"/view/PSsubject.jsp");
+        }
     }
-    private void searchChoose(HttpServletRequest request,HttpServletResponse response) throws UnsupportedEncodingException, SQLException {
+    private void searchChoose(HttpServletRequest request,HttpServletResponse response) throws IOException, SQLException {
         String info = transform("info",request);
         String path = request.getContextPath();
+        ChooseDao cdao = new ChooseDao();
+        ArrayList<Choose> scho = cdao.searchChoose(info);
+        request.getSession().setAttribute("scho",scho);
+        response.sendRedirect(path +"/view/Schoose.jsp");
     }
-    private void searchScore(HttpServletRequest request,HttpServletResponse response) throws UnsupportedEncodingException, SQLException {
+    private void searchScore(HttpServletRequest request,HttpServletResponse response) throws IOException, SQLException {
         String info = transform("info",request);
         String path = request.getContextPath();
+        ScoreDao sdao = new ScoreDao();
+        ArrayList<Scores> ssco = sdao.searchScore(info);
+        request.getSession().setAttribute("ssco",ssco);
+        response.sendRedirect(path +"/view/Sscore.jsp");
     }
 }

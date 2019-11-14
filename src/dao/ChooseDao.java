@@ -67,6 +67,37 @@ public class ChooseDao extends BaseDao{
         }
         return ret;
     }
+    public ArrayList<Choose> searchChoose(String info) throws SQLException {
+        ArrayList<Choose> ret = new ArrayList<Choose>();
+        String value = "StudentNO='" + info + "' or SubjectNO='" + info + "'";
+        String sql = "select * from chooses where " + value;
+        ResultSet resultSet = query(sql);
+        try {
+            while(resultSet.next()){
+                Choose c = new Choose();
+                c.setStudentNo(resultSet.getInt("StudentNO"));
+                c.setSubjectNo(resultSet.getInt("SubjectNo"));
+                String sql1 = "select UserName from students where StudentNO = '" + resultSet.getInt("StudentNO") + "'";
+                ResultSet rs1 = query(sql1);
+                if(rs1.next()) {
+                    c.setStudentName(rs1.getString("UserName"));
+                }
+                String sql2 = "select SubjectName from subjects where SubjectNO = '" + resultSet.getInt("SubjectNO") + "'";
+                ResultSet rs2 = query(sql2);
+                if(rs2.next()) {
+                    c.setSubjectName(rs2.getString("SubjectName"));
+                }
+                ret.add(c);
+            }
+        } catch (SQLException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }finally {
+            closeCon();
+            if(resultSet!=null) resultSet.close();
+        }
+        return ret;
+    }
     public boolean updateChoose(Choose c) {
         String value = "('" + c.getStudentNo() + "','" + c.getSubjectNo() + "')";
         String sql = "insert into chooses (StudentNO,SubjectNO) values " +value;

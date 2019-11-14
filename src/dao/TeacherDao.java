@@ -59,6 +59,33 @@ public class TeacherDao extends BaseDao{
         }
         return ret;
     }
+    public ArrayList<Teachers> searchTeacher(String info) throws SQLException {
+        ArrayList<Teachers> ret = new ArrayList<Teachers>();
+        String value = "TeacherNO='" + info + "' or TeacherName like '%" + info + "%' or GradeNO like '%" + info + "%'";
+        String sql = "select * from teachers where "+ value;
+        ResultSet resultSet = query(sql);
+        try {
+            while(resultSet.next()){
+                Teachers t = new Teachers();
+                t.setTeacherNo(resultSet.getInt("TeacherNO"));
+                t.setTeacherName(resultSet.getString("TeacherName"));
+                t.setGradeNo(resultSet.getInt("GradeNO"));
+                String sql1 = "select GradeName from grades where GradeNO = '" + resultSet.getInt("GradeNO") + "'";
+                ResultSet rs1 = query(sql1);
+                if(rs1.next()) {
+                    t.setGradeName(rs1.getString("GradeName"));
+                }
+                ret.add(t);
+            }
+        } catch (SQLException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }finally {
+            closeCon();
+            if(resultSet!=null) resultSet.close();
+        }
+        return ret;
+    }
     public boolean deleteTeacher(String teacherno) {
         String sql = "delete from teachers where TeacherNO = '" + teacherno + "'";
         try {

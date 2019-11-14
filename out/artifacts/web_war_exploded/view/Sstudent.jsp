@@ -41,32 +41,6 @@
             <a class="navbar-brand" href="">学生管理系统</a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
-            <form method="post" class="navbar-form navbar-left" style="margin-left: 710px" action="<%=request.getContextPath()%>/SearchServlet">
-                <div class="input-group form-signin" style="max-width: 200px;">
-                    <span class="input-group-addon">搜索对象</span>
-                    <select name="type" class="form-control">
-                        <option value="1">学生</option>
-                        <option value="2">院系</option>
-                        <option value="3">教师</option>
-                        <option value="4">课程</option>
-                        <option value="5">选课</option>
-                        <option value="6">成绩</option>
-                    </select>
-                </div>
-                <input name="info" type="text" placeholder="输入要搜索的内容" class="form-control">
-                <button type="submit" class="btn btn-success">搜索</button>
-            </form>
-            <div class="btn-group" style="margin-top: 8px;margin-left: 20px">
-                <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    添加 <span class="caret"></span>
-                </button>
-                <ul class="dropdown-menu">
-                    <li><a href="Nstudent.jsp">学生</a></li>
-                    <li><a href="Ngrade.jsp">院系</a></li>
-                    <li><a href="Nteacher.jsp">教师</a></li>
-                    <li><a href="Nsubject.jsp">课程</a></li>
-                </ul>
-            </div>
             <ul class="nav navbar-nav navbar-right">
                 <li>
                     <a href=""><%=session.getAttribute("name").toString()%></a>

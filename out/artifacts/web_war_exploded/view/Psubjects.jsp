@@ -26,6 +26,16 @@
             <a class="navbar-brand" href="">学生管理系统</a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
+            <form method="post" class="navbar-form navbar-left" style="margin-left: 580px" action="<%=request.getContextPath()%>/SearchServlet?from=student">
+                <div class="input-group form-signin" style="max-width: 200px;">
+                    <span class="input-group-addon">搜索对象</span>
+                    <select name="type" class="form-control">
+                        <option value="4">课程</option>
+                    </select>
+                </div>
+                <input name="info" type="text" placeholder="输入要搜索的内容" class="form-control">
+                <button type="submit" class="btn btn-success">搜索</button>
+            </form>
             <ul class="nav navbar-nav navbar-right">
                 <%
                     Students sall = (Students) session.getAttribute("sall");

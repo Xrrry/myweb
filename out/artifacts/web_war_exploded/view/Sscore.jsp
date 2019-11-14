@@ -1,11 +1,11 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ page import="java.sql.*" %>
-<%@ page import="dao.StudentDao" %>
-<%@ page import="bean.Students" %>
 <%@ page import="java.util.ArrayList" %>
+<%@ page import="dao.ScoreDao" %>
+<%@ page import="bean.Scores" %>
 <html>
 <head>
-    <title>学生列表</title>
+    <title>成绩列表</title>
     <link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css"/>
     <link rel="stylesheet" type="text/css" href="../css/dashboard.css"/>
 </head>
@@ -42,11 +42,8 @@
         </div>
         <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav navbar-right">
-                <li>
-                    <a href=""><%=session.getAttribute("name").toString()%></a>
-                </li>
-                <li><a href="<%=request.getContextPath()%>/view/login.jsp">退出</a></li>
-            </ul>
+                <li><a href=""><%=session.getAttribute("name").toString()%></a></li>
+                <li><a href="<%=request.getContextPath()%>/view/login.jsp">退出</a></li>            </ul>
         </div>
     </div>
 </nav>
@@ -56,67 +53,52 @@
     <div class="row">
         <div class="sidebar col-sm-3 col-md-2">
             <ul class="nav nav-sidebar">
-                <li class="active"><a href="students.jsp">学生列表<span
-                        class="sr-only">(current)</span></a></li>
+                <li><a href="students.jsp">学生列表</a></li>
                 <li><a href="grades.jsp">院系列表</a></li>
                 <li><a href="teachers.jsp">教师列表</a></li>
                 <li><a href="subjects.jsp">课程列表</a></li>
             </ul>
             <ul class="nav nav-sidebar">
                 <li><a href="choose.jsp">选课列表</a></li>
-                <li><a href="scores.jsp">成绩列表</a></li>
+                <li class="active"><a href="scores.jsp">成绩列表<span
+                        class="sr-only">(current)</span></a></li>
             </ul>
+
         </div>
     </div>
 </div>
 <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
     <div class="table-responsive" style="max-width: 1200px;margin: auto">
         <table align="center" class="table table-striped">
-            <caption>所有学生信息</caption>
+            <caption>所有成绩信息</caption>
             <tr>
-                <th>学生编号</th>
                 <th>姓名</th>
-                <th>学号</th>
-                <th>院系</th>
-                <th>性别</th>
-                <th>邮箱</th>
-                <th>电话</th>
-                <th>地址</th>
+                <th>课程</th>
+                <th>成绩</th>
+                <th>考试时间</th>
                 <th>操作</th>
             </tr>
-            <%  ArrayList<Students> stus = (ArrayList<Students>)session.getAttribute("sstu");
-                for (int i = 0; i < stus.size(); i++) {
-                    Students stu = (Students) stus.get(i);
+            <%  ArrayList<Scores> scos = (ArrayList<Scores>) session.getAttribute("ssco");
+                for (int i = 0; i < scos.size(); i++) {
+                    Scores sco = (Scores) scos.get(i);
             %>
             <tr style="height: 52px;">
-                <td style="padding-top: 17px;"><%=stu.getStudentNo() %>
+                <td style="padding-top: 17px;"><%=sco.getStudentName() %>
                 </td>
-                <td style="padding-top: 17px;"><%=stu.getUserName() %>
+                <td style="padding-top: 17px;"><%=sco.getSubjectName() %>
                 </td>
-                <td style="padding-top: 17px;"><%=stu.getIdCardNo() %>
+                <td style="padding-top: 17px;"><%=sco.getScore() %>
                 </td>
-                <td style="padding-top: 17px;"><%=stu.getGradeName() %>
-                </td>
-                <td style="padding-top: 17px;"><% if (stu.getGender() == 0) {
-                    out.print('男');
-                } else {
-                    out.print('女');
-                }%>
-                </td>
-                <td style="padding-top: 17px;"><%=stu.getEmail() %>
-                </td>
-                <td style="padding-top: 17px;"><%=stu.getPhone() %>
-                </td>
-                <td style="padding-top: 17px;"><%=stu.getAddress() %>
+                <td style="padding-top: 17px;"><%=sco.getExamDate() %>
                 </td>
                 <td>
-                    <a href="<%=request.getContextPath()%>/StudentServlet?method=toUpdate&id=<%=stu.getStudentNo()%>" >
+                    <a href="<%=request.getContextPath()%>/ScoreServlet?method=toUpdate&id=<%=sco.getScoreId()%>" >
                         <button type="button"
                                 class="btn btn-primary">修改
                         </button>
                     </a>
                     <button id="todelete" type="button" class="btn btn-danger" data-toggle="modal"
-                            data-target="#myModal" onclick="aaa(<%=stu.getStudentNo()%>)" value="<%=stu.getStudentNo()%>">
+                            data-target="#myModal" onclick="aaa(<%=sco.getScoreId()%>)" value="<%=sco.getScoreId()%>">
                         删除
                     </button>
                 </td>
@@ -125,9 +107,6 @@
         </table>
     </div>
 </div>
-<script type="text/javascript" src="../js/dropdown.js" ></script>
-<script type="text/javascript" src="../js/tooltip.js"></script>
-<script type="text/javascript" src="../js/popover.js"></script>
 <script src="../js/jquery-3.4.1.min.js"></script>
 <script src="../js/bootstrap.min.js"></script>
 <script type="text/javascript">
@@ -137,7 +116,7 @@
         id = e;
     }
     function go() {
-        window.location.href = '<%=request.getContextPath()%>/StudentServlet?method=delete&id=' + id;
+        window.location.href = '<%=request.getContextPath()%>/ScoreServlet?method=delete&id=' + id;
     }
 </script>
 </body>
