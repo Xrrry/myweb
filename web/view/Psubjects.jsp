@@ -4,6 +4,7 @@
 <%@ page import="bean.Subjects" %>
 <%@ page import="dao.SubjectDao" %>
 <%@ page import="bean.Students" %>
+<%@ page import="dao.ChooseDao" %>
 <html>
 <head>
     <title>课程列表</title>
@@ -27,12 +28,16 @@
         <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav navbar-right">
                 <%
-                    Students sall = (Students)session.getAttribute("sall");
+                    Students sall = (Students) session.getAttribute("sall");
                 %>
-                <li><a href=""><%=sall.getGradeName()%></a></li>
-                <li><a href=""><%=sall.getIdCardNo()%></a></li>
-                <li><a href=""><%=session.getAttribute("name").toString()%></a></li>
-                <li><a href="<%=request.getContextPath()%>/view/login.jsp">退出</a></li>            </ul>
+                <li><a href=""><%=sall.getGradeName()%>
+                </a></li>
+                <li><a href=""><%=sall.getIdCardNo()%>
+                </a></li>
+                <li><a href=""><%=session.getAttribute("name").toString()%>
+                </a></li>
+                <li><a href="<%=request.getContextPath()%>/view/login.jsp">退出</a></li>
+            </ul>
         </div>
     </div>
 </nav>
@@ -62,7 +67,9 @@
                 <th>操作</th>
             </tr>
             <% SubjectDao sdao = new SubjectDao();
+                ChooseDao choosedao = new ChooseDao();
                 ArrayList<Subjects> subs = sdao.getTSubjectList(session.getAttribute("GradeNO").toString());
+                Long studentno = sall.getStudentNo();
                 for (int i = 0; i < subs.size(); i++) {
                     Subjects sub = (Subjects) subs.get(i);
             %>
@@ -76,9 +83,22 @@
                 <td style="padding-top: 17px;"><%=sub.getGradeName() %>
                 </td>
                 <td>
-                    <button id="todelete" type="button" class="btn btn-success" >
-                        选课
-                    </button>
+                    <%
+                        if(!choosedao.isChoosed(studentno,sub.getSubjectNo()))
+                        {
+                    %>
+                    <a href="<%=request.getContextPath()%>/SubjectServlet?method=choose&id=<%=sub.getSubjectNo()%>">
+                        <button type="button"
+                                class="btn btn-success">选课
+                        </button>
+                    </a>
+                    <%} else {%>
+                    <a href="<%=request.getContextPath()%>/SubjectServlet?method=unchoose&id=<%=sub.getSubjectNo()%>">
+                        <button type="button"
+                                class="btn btn-primary">退课
+                        </button>
+                    </a>
+                    <%}%>
                 </td>
             </tr>
             <% } %>

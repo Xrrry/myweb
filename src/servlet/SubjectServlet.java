@@ -1,6 +1,9 @@
 package servlet;
 
+import bean.Choose;
+import bean.Students;
 import bean.Subjects;
+import dao.ChooseDao;
 import dao.GradeDao;
 import dao.SubjectDao;
 
@@ -28,6 +31,12 @@ public class SubjectServlet extends HttpServlet {
         }
         else if("insert".equals(method)) {
             insertSubject(request,response);
+        }
+        else if("choose".equals(method)) {
+            chooseSubject(request,response);
+        }
+        else if("unchoose".equals(method)) {
+            unChooseSubject(request,response);
         }
     }
     private void deleteStudent(HttpServletRequest request, HttpServletResponse response) throws IOException {
@@ -86,6 +95,36 @@ public class SubjectServlet extends HttpServlet {
         }
         else{
             request.getSession().setAttribute("message","添加失败");
+            response.sendRedirect(path + "/view/error.jsp");
+        }
+    }
+    private void chooseSubject(HttpServletRequest request, HttpServletResponse response) throws IOException {
+        String path = request.getContextPath();
+        Choose c = new Choose();
+        ChooseDao cdao = new ChooseDao();
+        Students s = (Students) request.getSession().getAttribute("sall");
+        c.setStudentNo(s.getStudentNo());
+        c.setSubjectNo(Integer.parseInt(request.getParameter("id")));
+        if(cdao.updateChoose(c)) {
+            response.sendRedirect(path + "/view/Psubjects.jsp");
+        }
+        else{
+            request.getSession().setAttribute("message","选课失败");
+            response.sendRedirect(path + "/view/error.jsp");
+        }
+    }
+    private void unChooseSubject(HttpServletRequest request, HttpServletResponse response) throws IOException {
+        String path = request.getContextPath();
+        ChooseDao cdao = new ChooseDao();
+        Choose c = new Choose();
+        Students s = (Students) request.getSession().getAttribute("sall");
+        c.setStudentNo(s.getStudentNo());
+        c.setSubjectNo(Integer.parseInt(request.getParameter("id")));
+        if(cdao.deleteChoose(c)) {
+            response.sendRedirect(path + "/view/Psubjects.jsp");
+        }
+        else{
+            request.getSession().setAttribute("message","退课失败");
             response.sendRedirect(path + "/view/error.jsp");
         }
     }

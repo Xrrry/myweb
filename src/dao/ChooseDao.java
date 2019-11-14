@@ -67,4 +67,40 @@ public class ChooseDao extends BaseDao{
         }
         return ret;
     }
+    public boolean updateChoose(Choose c) {
+        String value = "('" + c.getStudentNo() + "','" + c.getSubjectNo() + "')";
+        String sql = "insert into chooses (StudentNO,SubjectNO) values " +value;
+        try {
+            return update(sql);
+        }finally {
+            closeCon();
+        }
+    }
+    public boolean isChoosed(Long studentno,Long subjectno) {
+        String sql = "select * from chooses where StudentNO = '" + studentno + "' and SubjectNO='" + subjectno + "'";
+        ResultSet resultSet = query(sql);
+        try {
+            if(resultSet.next()) {
+                return true;
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally{
+            try {
+                resultSet.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+            closeCon();
+        }
+        return false;
+    }
+    public boolean deleteChoose(Choose c) {
+        String sql = "delete from chooses where StudentNO = '" + c.getStudentNo() + "' and SubjectNO = '" + c.getSubjectNo() + "'";
+        try {
+            return update(sql);
+        }finally {
+            closeCon();
+        }
+    }
 }
