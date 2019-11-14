@@ -21,7 +21,7 @@ public class SubjectServlet extends HttpServlet {
     public void doPost(HttpServletRequest request,HttpServletResponse response) throws IOException {
         String method = request.getParameter("method");
         if("delete".equals(method)) {
-            deleteStudent(request,response);
+            deleteSubject(request,response);
         }
         else if("toUpdate".equals(method)) {
             toUpdateSubject(request,response);
@@ -39,7 +39,7 @@ public class SubjectServlet extends HttpServlet {
             unChooseSubject(request,response);
         }
     }
-    private void deleteStudent(HttpServletRequest request, HttpServletResponse response) throws IOException {
+    private void deleteSubject(HttpServletRequest request, HttpServletResponse response) throws IOException {
         String id = request.getParameter("id");
         String path = request.getContextPath();
         SubjectDao sdao = new SubjectDao();

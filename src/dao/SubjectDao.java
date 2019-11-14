@@ -27,9 +27,9 @@ public class SubjectDao extends BaseDao{
         }
         return subject;
     }
-    public ArrayList<Subjects> getSubjectList(){
+    public ArrayList<Subjects> getSubjectList(int page){
         ArrayList<Subjects> ret = new ArrayList<Subjects>();
-        String sql = "select * from subjects";
+        String sql = "select * from subjects limit 10 offset " + (10 * (page-1));
         ResultSet resultSet = query(sql);
         try {
             while(resultSet.next()){
@@ -46,6 +46,27 @@ public class SubjectDao extends BaseDao{
             e.printStackTrace();
         }
         return ret;
+    }
+    public int getSubjectNum() {
+        String sql = "select COUNT(*) num from subjects";
+        ResultSet resultSet = query(sql);
+        try {
+            if(resultSet.next()){
+                int cnum = resultSet.getInt("num");
+                int page = cnum / 10 + (cnum%10==0?0:1);
+                return page;
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }finally {
+            try {
+                resultSet.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+            closeCon();
+        }
+        return 0;
     }
     public ArrayList<Subjects> searchSubject(String info){
         ArrayList<Subjects> ret = new ArrayList<Subjects>();

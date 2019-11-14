@@ -53,14 +53,14 @@
     <div class="row">
         <div class="sidebar col-sm-3 col-md-2">
             <ul class="nav nav-sidebar">
-                <li><a href="students.jsp">学生列表</a></li>
-                <li><a href="grades.jsp">院系列表</a></li>
-                <li><a href="teachers.jsp">教师列表</a></li>
-                <li><a href="subjects.jsp">课程列表</a></li>
+                <li><a href="students.jsp?page=1">学生列表</a></li>
+                <li><a href="grades.jsp?page=1">院系列表</a></li>
+                <li><a href="teachers.jsp?page=1">教师列表</a></li>
+                <li><a href="subjects.jsp?page=1">课程列表</a></li>
             </ul>
             <ul class="nav nav-sidebar">
-                <li><a href="choose.jsp">选课列表</a></li>
-                <li class="active"><a href="scores.jsp">成绩列表<span
+                <li><a href="choose.jsp?page=1">选课列表</a></li>
+                <li class="active"><a href="scores.jsp?page=1">成绩列表<span
                         class="sr-only">(current)</span></a></li>
             </ul>
 
@@ -79,7 +79,9 @@
                 <th>操作</th>
             </tr>
             <%  ScoreDao sdao = new ScoreDao();
-                ArrayList<Scores> scos = sdao.getScoreList();
+                int pa = Integer.parseInt(request.getParameter("page"));
+                int pagenum = sdao.getScoreNum();
+                ArrayList<Scores> scos = sdao.getScoreList(pa);
                 for (int i = 0; i < scos.size(); i++) {
                     Scores sco = (Scores) scos.get(i);
             %>
@@ -106,6 +108,43 @@
             </tr>
             <% } %>
         </table>
+        <nav aria-label="Page navigation">
+            <ul class="pagination">
+                <%if(pa!=1) {%>
+                <li>
+                    <a href="<%=request.getContextPath()%>/view/scores.jsp?page=<%=pa-1%>" aria-label="Previous">
+                        <span aria-hidden="true">&laquo;</span>
+                    </a>
+                </li>
+                <%}else{%>
+                <li class="disabled">
+                    <a href="" aria-label="Previous">
+                        <span aria-hidden="true">&laquo;</span>
+                    </a>
+                </li>
+                <%}
+                    for(int i=1;i<=pagenum;i++){
+                        if (pa==i){
+                %>
+                <li class="active"><a href="<%=request.getContextPath()%>/view/scores.jsp?page=<%=i%>"><%=i%></a></li>
+                <%}else{%>
+                <li><a href="<%=request.getContextPath()%>/view/scores.jsp?page=<%=i%>"><%=i%></a></li>
+                <%}}%>
+                <%if(pa!=pagenum){%>
+                <li>
+                    <a href="<%=request.getContextPath()%>/view/scores.jsp?page=<%=pa+1%>" aria-label="Next">
+                        <span aria-hidden="true">&raquo;</span>
+                    </a>
+                </li>
+                <%}else{%>
+                <li class="disabled">
+                    <a href="" aria-label="Next">
+                        <span aria-hidden="true">&raquo;</span>
+                    </a>
+                </li>
+                <%}%>
+            </ul>
+        </nav>
     </div>
 </div>
 <script src="../js/jquery-3.4.1.min.js"></script>

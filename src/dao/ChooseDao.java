@@ -37,9 +37,9 @@ public class ChooseDao extends BaseDao{
         }
         return choose;
     }
-    public ArrayList<Choose> getChooseList() throws SQLException {
+    public ArrayList<Choose> getChooseList(int page) throws SQLException {
         ArrayList<Choose> ret = new ArrayList<Choose>();
-        String sql = "select * from chooses";
+        String sql = "select * from chooses limit 10 offset " + (10 * (page-1));
         ResultSet resultSet = query(sql);
         try {
             while(resultSet.next()){
@@ -66,6 +66,27 @@ public class ChooseDao extends BaseDao{
             if(resultSet!=null) resultSet.close();
         }
         return ret;
+    }
+    public int getChooseNum() {
+        String sql = "select COUNT(*) num from chooses";
+        ResultSet resultSet = query(sql);
+        try {
+            if(resultSet.next()){
+                int cnum = resultSet.getInt("num");
+                int page = cnum / 10 + (cnum%10==0?0:1);
+                return page;
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }finally {
+            try {
+                resultSet.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+            closeCon();
+        }
+        return 0;
     }
     public ArrayList<Choose> searchChoose(String info) throws SQLException {
         ArrayList<Choose> ret = new ArrayList<Choose>();

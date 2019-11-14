@@ -56,9 +56,9 @@ public class GradeDao extends BaseDao{
         }
         return "0";
     }
-    public ArrayList<Grades> getGradeList() {
+    public ArrayList<Grades> getGradeList(int page) {
         ArrayList<Grades> ret = new ArrayList<Grades>();
-        String sql = "select * from grades";
+        String sql = "select * from grades limit 10 offset " + (10 * (page-1));
         ResultSet resultSet = query(sql);
         try {
             while(resultSet.next()){
@@ -81,6 +81,27 @@ public class GradeDao extends BaseDao{
             }
         }
         return ret;
+    }
+    public int getGradeNum() {
+        String sql = "select COUNT(*) num from grades";
+        ResultSet resultSet = query(sql);
+        try {
+            if(resultSet.next()){
+                int cnum = resultSet.getInt("num");
+                int page = cnum / 10 + (cnum%10==0?0:1);
+                return page;
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }finally {
+            try {
+                resultSet.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+            closeCon();
+        }
+        return 0;
     }
     public ArrayList<Grades> searchGrade(String info) {
         ArrayList<Grades> ret = new ArrayList<Grades>();

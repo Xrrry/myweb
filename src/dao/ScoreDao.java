@@ -36,9 +36,9 @@ public class ScoreDao extends BaseDao{
         }
         return score;
     }
-    public ArrayList<Scores> getScoreList() throws SQLException {
+    public ArrayList<Scores> getScoreList(int page) throws SQLException {
         ArrayList<Scores> ret = new ArrayList<Scores>();
-        String sql = "select * from scores";
+        String sql = "select * from scores limit 10 offset " + (10 * (page-1));
         ResultSet resultSet = query(sql);
         try {
             while(resultSet.next()){
@@ -68,6 +68,27 @@ public class ScoreDao extends BaseDao{
             if(resultSet!=null) resultSet.close();
         }
         return ret;
+    }
+    public int getScoreNum() {
+        String sql = "select COUNT(*) num from scores";
+        ResultSet resultSet = query(sql);
+        try {
+            if(resultSet.next()){
+                int cnum = resultSet.getInt("num");
+                int page = cnum / 10 + (cnum%10==0?0:1);
+                return page;
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }finally {
+            try {
+                resultSet.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+            closeCon();
+        }
+        return 0;
     }
     public ArrayList<Scores> searchScore(String info) throws SQLException {
         ArrayList<Scores> ret = new ArrayList<Scores>();

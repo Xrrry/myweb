@@ -33,9 +33,9 @@ public class TeacherDao extends BaseDao{
         }
         return teachers;
     }
-    public ArrayList<Teachers> getTeacherList() throws SQLException {
+    public ArrayList<Teachers> getTeacherList(int page) throws SQLException {
         ArrayList<Teachers> ret = new ArrayList<Teachers>();
-        String sql = "select * from teachers";
+        String sql = "select * from teachers limit 10 offset " + (10 * (page-1));
         ResultSet resultSet = query(sql);
         try {
             while(resultSet.next()){
@@ -58,6 +58,27 @@ public class TeacherDao extends BaseDao{
             if(resultSet!=null) resultSet.close();
         }
         return ret;
+    }
+    public int getTeacherNum() {
+        String sql = "select COUNT(*) num from teachers";
+        ResultSet resultSet = query(sql);
+        try {
+            if(resultSet.next()){
+                int cnum = resultSet.getInt("num");
+                int page = cnum / 10 + (cnum%10==0?0:1);
+                return page;
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }finally {
+            try {
+                resultSet.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+            closeCon();
+        }
+        return 0;
     }
     public ArrayList<Teachers> searchTeacher(String info) throws SQLException {
         ArrayList<Teachers> ret = new ArrayList<Teachers>();
