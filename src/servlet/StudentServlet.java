@@ -1,6 +1,8 @@
 package servlet;
 
+import bean.Grades;
 import bean.Students;
+import dao.GradeDao;
 import dao.StudentDao;
 
 import javax.servlet.http.HttpServlet;
@@ -9,6 +11,8 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
+import java.sql.SQLException;
+import java.util.ArrayList;
 
 public class StudentServlet extends HttpServlet {
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException{
@@ -54,6 +58,7 @@ public class StudentServlet extends HttpServlet {
         HttpSession session = request.getSession();
         Students s = new Students();
         StudentDao sdao = new StudentDao();
+        GradeDao gdao = new GradeDao();
         Students students = (Students) session.getAttribute("student");
         String StudentNO = String.valueOf(students.getStudentNo());
         s.setUserName(transform("name",request));
@@ -61,6 +66,16 @@ public class StudentServlet extends HttpServlet {
         s.setPhone(request.getParameter("phone"));
         s.setIdCardNo(request.getParameter("idno"));
         s.setAddress(transform("address",request));
+        String gradename = transform("gradename",request);
+        s.setGradeName(gradename);
+        s.setGradeNo(Long.parseLong(gdao.getGradeNO(gradename)));
+        String gender = transform("gender",request);
+        if(gender.equals("男")){
+            s.setGender(0);
+        }
+        else{
+            s.setGender(1);
+        }
         if(sdao.updateStudent(StudentNO,s)){
             response.sendRedirect(path +"/view/students.jsp");
         }
@@ -77,14 +92,23 @@ public class StudentServlet extends HttpServlet {
     private void insertStudent(HttpServletRequest request, HttpServletResponse response) throws IOException {
         Students s = new Students();
         StudentDao sdao = new StudentDao();
+        GradeDao gdao = new GradeDao();
         String path = request.getContextPath();
         s.setUserName(transform("name",request));
         s.setEmail(request.getParameter("email"));
         s.setPhone(request.getParameter("phone"));
         s.setIdCardNo(request.getParameter("idno"));
         s.setAddress(transform("address",request));
-        s.setGradeNo(Integer.parseInt(request.getParameter("gradeno")));
-        s.setGender(Integer.parseInt(request.getParameter("gender")));
+        String gradename = transform("gradename",request);
+        s.setGradeName(gradename);
+        s.setGradeNo(Long.parseLong(gdao.getGradeNO(gradename)));
+        String gender = transform("gender",request);
+        if(gender.equals("男")){
+            s.setGender(0);
+        }
+        else{
+            s.setGender(1);
+        }
         if(sdao.insertStudent(s)) {
             response.sendRedirect(path + "/view/students.jsp");
         }

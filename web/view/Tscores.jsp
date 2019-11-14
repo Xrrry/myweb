@@ -9,7 +9,7 @@
 <%@ page import="bean.Scores" %>
 <html>
 <head>
-    <title>学生列表</title>
+    <title>成绩列表</title>
     <link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css"/>
     <link rel="stylesheet" type="text/css" href="../css/dashboard.css"/>
 </head>
@@ -54,7 +54,7 @@
 <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
     <div class="table-responsive" style="max-width: 1200px;margin: auto">
         <table align="center" class="table table-striped">
-            <caption>所有成绩信息</caption>
+            <caption>本院学生成绩信息</caption>
             <tr>
                 <th>姓名</th>
                 <th>课程</th>

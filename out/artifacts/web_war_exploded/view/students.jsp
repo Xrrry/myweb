@@ -46,6 +46,7 @@
                     添加 <span class="caret"></span>
                 </button>
                 <ul class="dropdown-menu">
+<%--                    <li><a href="<%=request.getContextPath()%>/StudentServlet?method=toInsert">学生</a></li>--%>
                     <li><a href="Nstudent.jsp">学生</a></li>
                     <li><a href="Ngrade.jsp">院系</a></li>
                     <li><a href="Nteacher.jsp">教师</a></li>

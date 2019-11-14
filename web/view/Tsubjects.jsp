@@ -7,7 +7,7 @@
 <%@ page import="bean.Subjects" %>
 <html>
 <head>
-    <title>学生列表</title>
+    <title>课程列表</title>
     <link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css"/>
     <link rel="stylesheet" type="text/css" href="../css/dashboard.css"/>
 </head>
@@ -52,7 +52,7 @@
 <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
     <div class="table-responsive" style="max-width: 1200px;margin: auto">
         <table align="center" class="table table-striped">
-            <caption>本院系课程信息</caption>
+            <caption>本院系所有课程信息</caption>
             <tr>
                 <th>课程编号</th>
                 <th>课程名</th>

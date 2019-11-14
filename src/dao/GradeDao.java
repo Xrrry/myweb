@@ -33,7 +33,30 @@ public class GradeDao extends BaseDao{
         }
         return grade;
     }
-    public ArrayList<Grades> getGradeList() throws SQLException {
+    public String getGradeNO(String gradename) {
+        String sql = "select GradeNO from grades where GradeName = '" + gradename + "'";
+        ResultSet resultSet = query(sql);
+        try {
+            if(resultSet.next()) {
+                return resultSet.getString("GradeNO");
+            }
+        }
+        catch (SQLException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }finally {
+            closeCon();
+            if(resultSet!=null) {
+                try {
+                    resultSet.close();
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+        return "0";
+    }
+    public ArrayList<Grades> getGradeList() {
         ArrayList<Grades> ret = new ArrayList<Grades>();
         String sql = "select * from grades";
         ResultSet resultSet = query(sql);
@@ -49,7 +72,13 @@ public class GradeDao extends BaseDao{
             e.printStackTrace();
         }finally {
             closeCon();
-            if(resultSet!=null) resultSet.close();
+            if(resultSet!=null) {
+                try {
+                    resultSet.close();
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
+            }
         }
         return ret;
     }

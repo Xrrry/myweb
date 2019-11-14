@@ -50,10 +50,13 @@ public class TeacherServlet extends HttpServlet {
         HttpSession session = request.getSession();
         Teachers t = new Teachers();
         TeacherDao tdao = new TeacherDao();
+        GradeDao gdao = new GradeDao();
         Teachers teachers = (Teachers) session.getAttribute("teacher");
         String TeacherNO = String.valueOf(teachers.getTeacherNo());
         t.setTeacherName(transform("name",request));
-        System.out.println(t.getTeacherName());
+        String gradename = transform("gradename",request);
+        t.setGradeName(gradename);
+        t.setGradeNo(Long.parseLong(gdao.getGradeNO(gradename)));
         if(tdao.updateTeacher(TeacherNO,t)){
             response.sendRedirect(path +"/view/teachers.jsp");
         }
@@ -72,10 +75,10 @@ public class TeacherServlet extends HttpServlet {
         TeacherDao tdao = new TeacherDao();
         GradeDao gdao = new GradeDao();
         String path = request.getContextPath();
-        String id = request.getParameter("grade");
         t.setTeacherName(transform("name",request));
-        t.setGradeNo(Integer.parseInt(id));
-        t.setGradeName(gdao.getGrade(id).getGradeName());
+        String gradename = transform("gradename",request);
+        t.setGradeName(gradename);
+        t.setGradeNo(Long.parseLong(gdao.getGradeNO(gradename)));
         if(tdao.insertTeacher(t)) {
             response.sendRedirect(path + "/view/teachers.jsp");
         }

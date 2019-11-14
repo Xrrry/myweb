@@ -50,10 +50,14 @@ public class SubjectServlet extends HttpServlet {
         HttpSession session = request.getSession();
         Subjects s = new Subjects();
         SubjectDao sdao = new SubjectDao();
+        GradeDao gdao = new GradeDao();
         Subjects subjects = (Subjects) session.getAttribute("subject");
         String GradeNO = String.valueOf(subjects.getSubjectNo());
         s.setSubjectName(transform("name",request));
         s.setClassHour(Long.parseLong(request.getParameter("hour")));
+        String gradename = transform("gradename",request);
+        s.setGradeName(gradename);
+        s.setGradeNo(Long.parseLong(gdao.getGradeNO(gradename)));
         if(sdao.updateSubject(GradeNO,s)){
             response.sendRedirect(path +"/view/subjects.jsp");
         }
@@ -72,11 +76,11 @@ public class SubjectServlet extends HttpServlet {
         SubjectDao sdao = new SubjectDao();
         GradeDao gdao = new GradeDao();
         String path = request.getContextPath();
-        String id = request.getParameter("grade");
         s.setSubjectName(transform("name",request));
         s.setClassHour(Long.parseLong(request.getParameter("hour")));
-        s.setGradeNo(Long.parseLong(request.getParameter("grade")));
-        s.setGradeName(gdao.getGrade(id).getGradeName());
+        String gradename = transform("gradename",request);
+        s.setGradeName(gradename);
+        s.setGradeNo(Long.parseLong(gdao.getGradeNO(gradename)));
         if(sdao.insertSubject(s)){
             response.sendRedirect(path + "/view/subjects.jsp");
         }

@@ -50,7 +50,7 @@
 <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
     <div class="table-responsive" style="max-width: 1200px;margin: auto">
         <table align="center" class="table table-striped">
-            <caption>本院系学生信息</caption>
+            <caption>本院系所有学生信息</caption>
             <tr>
                 <th>学生编号</th>
                 <th>姓名</th>

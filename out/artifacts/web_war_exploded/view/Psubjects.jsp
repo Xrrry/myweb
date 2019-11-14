@@ -3,6 +3,7 @@
 <%@ page import="java.util.ArrayList" %>
 <%@ page import="bean.Subjects" %>
 <%@ page import="dao.SubjectDao" %>
+<%@ page import="bean.Students" %>
 <html>
 <head>
     <title>课程列表</title>
@@ -25,8 +26,12 @@
         </div>
         <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav navbar-right">
-                <li><a href=""><%=session.getAttribute("name").toString()%>
-                </a></li>
+                <%
+                    Students sall = (Students)session.getAttribute("sall");
+                %>
+                <li><a href=""><%=sall.getGradeName()%></a></li>
+                <li><a href=""><%=sall.getIdCardNo()%></a></li>
+                <li><a href=""><%=session.getAttribute("name").toString()%></a></li>
                 <li><a href="<%=request.getContextPath()%>/view/login.jsp">退出</a></li>            </ul>
         </div>
     </div>

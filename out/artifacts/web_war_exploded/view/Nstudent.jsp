@@ -1,4 +1,7 @@
-<%@ page import="bean.Students" %><%--
+<%@ page import="bean.Students" %>
+<%@ page import="bean.Grades" %>
+<%@ page import="java.util.ArrayList" %>
+<%@ page import="dao.GradeDao" %><%--
   Created by IntelliJ IDEA.
   User: Admin
   Date: 2019/11/13
@@ -68,12 +71,24 @@
 
                 <div class="input-group form-signin" style="max-width: 400px;">
                     <span class="input-group-addon">性别</span>
-                    <input name="gender" type="text" class="form-control" placeholder="性别" required><br>
+                    <select name="gender" class="form-control">
+                        <option>男</option>
+                        <option>女</option>
+                    </select>
                 </div>
 
                 <div class="input-group form-signin" style="max-width: 400px;">
-                    <span class="input-group-addon">院系编号</span>
-                    <input name="gradeno" type="text" class="form-control" placeholder="院系编号" required><br>
+                    <span class="input-group-addon">院系</span>
+                    <select name="gradename" class="form-control">
+                        <%
+                            GradeDao gdao = new GradeDao();
+                            ArrayList<Grades> gras = gdao.getGradeList();
+                            for (int i = 0; i < gras.size(); i++) {
+                                Grades gra = (Grades) gras.get(i);
+                        %>
+                        <option><%=gra.getGradeName()%></option>
+                        <% } %>
+                    </select>
                 </div>
 
                 <div class="input-group form-signin" style="max-width: 400px;">

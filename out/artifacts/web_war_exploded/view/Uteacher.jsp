@@ -1,4 +1,7 @@
 <%@ page import="bean.Teachers" %>
+<%@ page import="dao.GradeDao" %>
+<%@ page import="bean.Grades" %>
+<%@ page import="java.util.ArrayList" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
@@ -61,6 +64,25 @@
                 <div class="input-group form-signin" style="max-width: 400px;">
                     <span class="input-group-addon">名称</span>
                     <input name="name" type="text" class="form-control" value="<%=t.getTeacherName()%>" required><br>
+                </div>
+
+                <div class="input-group form-signin" style="max-width: 400px;">
+                    <span class="input-group-addon">院系</span>
+                    <select name="gradename" class="form-control">
+                        <%
+                            GradeDao gdao = new GradeDao();
+                            ArrayList<Grades> gras = gdao.getGradeList();
+                            for (int i = 0; i < gras.size(); i++) {
+                                Grades gra = (Grades) gras.get(i);
+                        %>
+                        <option <%
+                            if (t.getGradeName().equals(gra.getGradeName())) {
+                        %>
+                                selected="selected"
+                                <%}%>><%=gra.getGradeName()%>
+                        </option>
+                        <% } %>
+                    </select>
                 </div>
 
                 <input style="margin-top:15px;max-width: 370px;" id="btn-submit" type="submit"

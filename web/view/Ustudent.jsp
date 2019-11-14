@@ -1,4 +1,7 @@
-<%@ page import="bean.Students" %><%--
+<%@ page import="bean.Students" %>
+<%@ page import="dao.GradeDao" %>
+<%@ page import="bean.Grades" %>
+<%@ page import="java.util.ArrayList" %><%--
   Created by IntelliJ IDEA.
   User: Admin
   Date: 2019/11/13
@@ -70,6 +73,40 @@
                 </div>
 
                 <div class="input-group form-signin" style="max-width: 400px;">
+                    <span class="input-group-addon">性别</span>
+                    <select name="gender" class="form-control">
+                        <%
+                            if (s.getGender() == 0) {
+                        %>
+                        <option selected="selected">男</option>
+                        <option>女</option>
+                        <%} else {%>
+                        <option>男</option>
+                        <option selected="selected">女</option>
+                        <%}%>
+                    </select>
+                </div>
+
+                <div class="input-group form-signin" style="max-width: 400px;">
+                    <span class="input-group-addon">院系</span>
+                    <select name="gradename" class="form-control">
+                        <%
+                            GradeDao gdao = new GradeDao();
+                            ArrayList<Grades> gras = gdao.getGradeList();
+                            for (int i = 0; i < gras.size(); i++) {
+                                Grades gra = (Grades) gras.get(i);
+                        %>
+                        <option <%
+                            if (s.getGradeName().equals(gra.getGradeName())) {
+                        %>
+                                selected="selected"
+                                <%}%>><%=gra.getGradeName()%>
+                        </option>
+                        <% } %>
+                    </select>
+                </div>
+
+                <div class="input-group form-signin" style="max-width: 400px;">
                     <span class="input-group-addon">邮箱</span>
                     <input name="email" type="text" class="form-control" value="<%=s.getEmail()%>" required><br>
                 </div>
@@ -95,7 +132,7 @@
         </div>
     </div>
 </div>
-<script type="text/javascript" src="../js/dropdown.js" ></script>
+<script type="text/javascript" src="../js/dropdown.js"></script>
 <script type="text/javascript" src="../js/tooltip.js"></script>
 <script type="text/javascript" src="../js/popover.js"></script>
 <script src="../js/jquery-3.4.1.min.js"></script>

@@ -39,7 +39,7 @@ public class ChooseDao extends BaseDao{
     }
     public ArrayList<Choose> getChooseList() throws SQLException {
         ArrayList<Choose> ret = new ArrayList<Choose>();
-        String sql = "select * from scores";
+        String sql = "select * from chooses";
         ResultSet resultSet = query(sql);
         try {
             while(resultSet.next()){

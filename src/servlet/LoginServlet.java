@@ -50,6 +50,7 @@ public class LoginServlet extends HttpServlet {
                     Teachers t = tdao.getTeacher(session.getAttribute("KeyNO").toString());
                     session.setAttribute("name",t.getTeacherName());
                     session.setAttribute("GradeNO",t.getGradeNo());
+                    session.setAttribute("tall",t);
                     response.sendRedirect(path + "/view/Tstudents.jsp");
                     break;
                 case 2:
@@ -59,6 +60,7 @@ public class LoginServlet extends HttpServlet {
                     session.setAttribute("name",s.getUserName());
                     session.setAttribute("StudentNO",s.getStudentNo());
                     session.setAttribute("GradeNO",s.getGradeNo());
+                    session.setAttribute("sall",s);
                     response.sendRedirect(path + "/view/Psubjects.jsp");
                     break;
             }

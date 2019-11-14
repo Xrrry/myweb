@@ -77,7 +77,8 @@ public class SubjectDao extends BaseDao{
         }
     }
     public boolean updateSubject(String subjectno, Subjects s) {
-        String sql = "update subjects set SubjectName = '" + s.getSubjectName() + "', ClassHour = '" + s.getClassHour() + "' where SubjectNO = '" + subjectno + "'";
+        String sql = "update subjects set SubjectName = '" + s.getSubjectName() + "', ClassHour = '" + s.getClassHour() +
+                "',GradeNO='" + s.getGradeNo() + "',GradeName='" + s.getGradeName() + "' where SubjectNO='" + subjectno + "'";
         try{
             return update(sql);
         }finally {
