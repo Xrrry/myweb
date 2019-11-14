@@ -118,7 +118,7 @@
                 </li>
                 <%}else{%>
                 <li class="disabled">
-                    <a href="<%=request.getContextPath()%>/view/scores.jsp?page=<%=pa-1%>" aria-label="Previous">
+                    <a href="" aria-label="Previous">
                         <span aria-hidden="true">&laquo;</span>
                     </a>
                 </li>

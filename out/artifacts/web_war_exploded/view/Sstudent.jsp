@@ -56,15 +56,15 @@
     <div class="row">
         <div class="sidebar col-sm-3 col-md-2">
             <ul class="nav nav-sidebar">
-                <li class="active"><a href="students.jsp">学生列表<span
+                <li class="active"><a href="students.jsp?page=1">学生列表<span
                         class="sr-only">(current)</span></a></li>
-                <li><a href="grades.jsp">院系列表</a></li>
-                <li><a href="teachers.jsp">教师列表</a></li>
-                <li><a href="subjects.jsp">课程列表</a></li>
+                <li><a href="grades.jsp?page=1">院系列表</a></li>
+                <li><a href="teachers.jsp?page=1">教师列表</a></li>
+                <li><a href="subjects.jsp?page=1">课程列表</a></li>
             </ul>
             <ul class="nav nav-sidebar">
-                <li><a href="choose.jsp">选课列表</a></li>
-                <li><a href="scores.jsp">成绩列表</a></li>
+                <li><a href="choose.jsp?page=1">选课列表</a></li>
+                <li><a href="scores.jsp?page=1">成绩列表</a></li>
             </ul>
         </div>
     </div>

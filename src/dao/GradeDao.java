@@ -82,6 +82,32 @@ public class GradeDao extends BaseDao{
         }
         return ret;
     }
+    public ArrayList<Grades> getGradeListAll() {
+        ArrayList<Grades> ret = new ArrayList<Grades>();
+        String sql = "select * from grades";
+        ResultSet resultSet = query(sql);
+        try {
+            while(resultSet.next()){
+                Grades s = new Grades();
+                s.setGradeName(resultSet.getString("GradeName"));
+                s.setGradeNo(resultSet.getInt("GradeNo"));
+                ret.add(s);
+            }
+        } catch (SQLException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }finally {
+            closeCon();
+            if(resultSet!=null) {
+                try {
+                    resultSet.close();
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+        return ret;
+    }
     public int getGradeNum() {
         String sql = "select COUNT(*) num from grades";
         ResultSet resultSet = query(sql);

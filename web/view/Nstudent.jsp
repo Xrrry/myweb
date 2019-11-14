@@ -82,7 +82,7 @@
                     <select name="gradename" class="form-control">
                         <%
                             GradeDao gdao = new GradeDao();
-                            ArrayList<Grades> gras = gdao.getGradeList();
+                            ArrayList<Grades> gras = gdao.getGradeListAll();
                             for (int i = 0; i < gras.size(); i++) {
                                 Grades gra = (Grades) gras.get(i);
                         %>
