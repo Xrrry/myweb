@@ -44,9 +44,9 @@ public class StudentDao extends BaseDao{
         }
         return student;
     }
-    public ArrayList<Students> getStudentList() throws SQLException {
+    public ArrayList<Students> getStudentList(int page) throws SQLException {
         ArrayList<Students> ret = new ArrayList<Students>();
-        String sql = "select * from students";
+        String sql = "select * from students limit 10 offset " + (10 * (page-1));
         ResultSet resultSet = query(sql);
         try {
             while(resultSet.next()){
@@ -74,6 +74,27 @@ public class StudentDao extends BaseDao{
             if(resultSet!=null) resultSet.close();
         }
         return ret;
+    }
+    public int getStudentNum() {
+        String sql = "select COUNT(*) num from students";
+        ResultSet resultSet = query(sql);
+        try {
+            if(resultSet.next()){
+                int cnum = resultSet.getInt("num");
+                int page = cnum / 10 + (cnum%10==0?0:1);
+                return page;
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }finally {
+            try {
+                resultSet.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+            closeCon();
+        }
+        return 0;
     }
 
     public ArrayList<Students> getTStudentList(String gradeno) throws SQLException {

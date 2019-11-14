@@ -42,7 +42,7 @@ public class LoginServlet extends HttpServlet {
                 case 0:
                     System.out.println('0');
                     session.setAttribute("name",account);
-                    response.sendRedirect(path + "/view/students.jsp");
+                    response.sendRedirect(path + "/view/students.jsp?page=1");
                     break;
                 case 1:
                     System.out.println('1');

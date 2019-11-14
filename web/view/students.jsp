@@ -111,7 +111,9 @@
                 <th>操作</th>
             </tr>
             <% StudentDao sdao = new StudentDao();
-                ArrayList<Students> stus = sdao.getStudentList();
+                int pa = Integer.parseInt(request.getParameter("page"));
+                ArrayList<Students> stus = sdao.getStudentList(pa);
+                int pagenum = sdao.getStudentNum();
                 for (int i = 0; i < stus.size(); i++) {
                     Students stu = (Students) stus.get(i);
             %>
@@ -150,6 +152,43 @@
             </tr>
             <% } %>
         </table>
+        <nav aria-label="Page navigation">
+            <ul class="pagination">
+                <%if(pa!=1) {%>
+                <li>
+                    <a href="<%=request.getContextPath()%>/view/students.jsp?page=<%=pa-1%>" aria-label="Previous">
+                        <span aria-hidden="true">&laquo;</span>
+                    </a>
+                </li>
+                <%}else{%>
+                <li class="disabled">
+                    <a href="<%=request.getContextPath()%>/view/students.jsp?page=<%=pa-1%>" aria-label="Previous">
+                        <span aria-hidden="true">&laquo;</span>
+                    </a>
+                </li>
+                <%}
+                for(int i=1;i<=pagenum;i++){
+                    if (pa==i){
+                %>
+                <li class="active"><a href="<%=request.getContextPath()%>/view/students.jsp?page=<%=i%>"><%=i%></a></li>
+                <%}else{%>
+                <li><a href="<%=request.getContextPath()%>/view/students.jsp?page=<%=i%>"><%=i%></a></li>
+                <%}}%>
+                <%if(pa!=pagenum){%>
+                <li>
+                    <a href="<%=request.getContextPath()%>/view/students.jsp?page=<%=pa+1%>" aria-label="Next">
+                        <span aria-hidden="true">&raquo;</span>
+                    </a>
+                </li>
+                <%}else{%>
+                <li class="disabled">
+                    <a href="" aria-label="Next">
+                        <span aria-hidden="true">&raquo;</span>
+                    </a>
+                </li>
+                <%}%>
+            </ul>
+        </nav>
     </div>
 </div>
 <script type="text/javascript" src="../js/dropdown.js" ></script>
