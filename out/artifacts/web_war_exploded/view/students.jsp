@@ -41,7 +41,8 @@
             <a class="navbar-brand" href="">学生管理系统</a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
-            <form method="post" class="navbar-form navbar-left" style="margin-left: 710px" action="<%=request.getContextPath()%>/SearchServlet?from=admin">
+            <form method="post" class="navbar-form navbar-left" style="margin-left: 710px"
+                  action="<%=request.getContextPath()%>/SearchServlet?from=admin">
                 <div class="input-group form-signin" style="max-width: 200px;">
                     <span class="input-group-addon">搜索对象</span>
                     <select name="type" class="form-control">
@@ -57,7 +58,8 @@
                 <button type="submit" class="btn btn-success">搜索</button>
             </form>
             <div class="btn-group" style="margin-top: 8px;margin-left: 20px">
-                <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown"
+                        aria-haspopup="true" aria-expanded="false">
                     添加 <span class="caret"></span>
                 </button>
                 <ul class="dropdown-menu">
@@ -69,7 +71,15 @@
             </div>
             <ul class="nav navbar-nav navbar-right">
                 <li>
-                    <a href=""><%=session.getAttribute("name").toString()%></a>
+                    <a href=""><%
+                        try {
+                            String name = session.getAttribute("name").toString();
+                            out.print(name);
+                        } catch (Exception e) {
+                            e.printStackTrace();
+                            response.sendRedirect(request.getContextPath() + "/view/login.jsp?flag=3");
+                        }
+                    %></a>
                 </li>
                 <li><a href="<%=request.getContextPath()%>/view/login.jsp">退出</a></li>
             </ul>
@@ -139,13 +149,14 @@
                 <td style="padding-top: 17px;"><%=stu.getAddress() %>
                 </td>
                 <td>
-                    <a href="<%=request.getContextPath()%>/StudentServlet?method=toUpdate&id=<%=stu.getStudentNo()%>" >
+                    <a href="<%=request.getContextPath()%>/StudentServlet?method=toUpdate&id=<%=stu.getStudentNo()%>">
                         <button type="button"
                                 class="btn btn-primary">修改
                         </button>
                     </a>
                     <button id="todelete" type="button" class="btn btn-danger" data-toggle="modal"
-                            data-target="#myModal" onclick="aaa(<%=stu.getStudentNo()%>)" value="<%=stu.getStudentNo()%>">
+                            data-target="#myModal" onclick="aaa(<%=stu.getStudentNo()%>)"
+                            value="<%=stu.getStudentNo()%>">
                         删除
                     </button>
                 </td>
@@ -154,33 +165,39 @@
         </table>
         <nav aria-label="Page navigation">
             <ul class="pagination">
-                <%if(pa!=1) {%>
+                <%if (pa != 1) {%>
                 <li>
                     <a href="<%=request.getContextPath()%>/view/students.jsp?page=<%=pa-1%>" aria-label="Previous">
                         <span aria-hidden="true">&laquo;</span>
                     </a>
                 </li>
-                <%}else{%>
+                <%} else {%>
                 <li class="disabled">
                     <a href="" aria-label="Previous">
                         <span aria-hidden="true">&laquo;</span>
                     </a>
                 </li>
-                <%}
-                for(int i=1;i<=pagenum;i++){
-                    if (pa==i){
+                <%
+                    }
+                    for (int i = 1; i <= pagenum; i++) {
+                        if (pa == i) {
                 %>
-                <li class="active"><a href="<%=request.getContextPath()%>/view/students.jsp?page=<%=i%>"><%=i%></a></li>
-                <%}else{%>
-                <li><a href="<%=request.getContextPath()%>/view/students.jsp?page=<%=i%>"><%=i%></a></li>
-                <%}}%>
-                <%if(pa!=pagenum){%>
+                <li class="active"><a href="<%=request.getContextPath()%>/view/students.jsp?page=<%=i%>"><%=i%>
+                </a></li>
+                <%} else {%>
+                <li><a href="<%=request.getContextPath()%>/view/students.jsp?page=<%=i%>"><%=i%>
+                </a></li>
+                <%
+                        }
+                    }
+                %>
+                <%if (pa != pagenum) {%>
                 <li>
                     <a href="<%=request.getContextPath()%>/view/students.jsp?page=<%=pa+1%>" aria-label="Next">
                         <span aria-hidden="true">&raquo;</span>
                     </a>
                 </li>
-                <%}else{%>
+                <%} else {%>
                 <li class="disabled">
                     <a href="" aria-label="Next">
                         <span aria-hidden="true">&raquo;</span>
@@ -191,17 +208,19 @@
         </nav>
     </div>
 </div>
-<script type="text/javascript" src="../js/dropdown.js" ></script>
+<script type="text/javascript" src="../js/dropdown.js"></script>
 <script type="text/javascript" src="../js/tooltip.js"></script>
 <script type="text/javascript" src="../js/popover.js"></script>
 <script src="../js/jquery-3.4.1.min.js"></script>
 <script src="../js/bootstrap.min.js"></script>
 <script type="text/javascript">
     var id = 0;
+
     function aaa(e) {
         console.log(e);
         id = e;
     }
+
     function go() {
         window.location.href = '<%=request.getContextPath()%>/StudentServlet?method=delete&id=' + id;
     }

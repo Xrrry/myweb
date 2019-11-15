@@ -16,6 +16,8 @@
             alert("验证码错误");
         } else if (flag == '2') {
             alert("账户名或密码错误");
+        } else if (flag =='3') {
+            alert("请登录，勿使用URL访问！");
         }
     </script>
 </head>

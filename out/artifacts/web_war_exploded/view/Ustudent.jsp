@@ -33,8 +33,15 @@
         <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav navbar-right">
                 <li>
-                    <a href=""><%=session.getAttribute("name").toString()%>
-                    </a>
+                    <a href=""><%
+                        try {
+                            String name = session.getAttribute("name").toString();
+                            out.print(name);
+                        } catch (Exception e) {
+                            e.printStackTrace();
+                            response.sendRedirect(request.getContextPath() + "/view/login.jsp?flag=3");
+                        }
+                    %></a>
                 </li>
                 <li><a href="<%=request.getContextPath()%>/view/login.jsp">退出</a></li>
             </ul>
@@ -92,7 +99,7 @@
                     <select name="gradename" class="form-control">
                         <%
                             GradeDao gdao = new GradeDao();
-                            ArrayList<Grades> gras = gdao.getGradeList();
+                            ArrayList<Grades> gras = gdao.getGradeListAll();
                             for (int i = 0; i < gras.size(); i++) {
                                 Grades gra = (Grades) gras.get(i);
                         %>

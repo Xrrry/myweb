@@ -42,8 +42,19 @@
         </div>
         <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav navbar-right">
-                <li><a href=""><%=session.getAttribute("account").toString()%></a></li>
-                <li><a href="<%=request.getContextPath()%>/view/login.jsp">退出</a></li>            </ul>
+                <li>
+                    <a href=""><%
+                        try {
+                            String name = session.getAttribute("name").toString();
+                            out.print(name);
+                        } catch (Exception e) {
+                            e.printStackTrace();
+                            response.sendRedirect(request.getContextPath() + "/view/login.jsp?flag=3");
+                        }
+                    %></a>
+                </li>
+                <li><a href="<%=request.getContextPath()%>/view/login.jsp">退出</a></li>
+            </ul>
         </div>
     </div>
 </nav>
@@ -76,7 +87,7 @@
                 <th>院系名</th>
                 <th>操作</th>
             </tr>
-            <%  GradeDao gdao = new GradeDao();
+            <% GradeDao gdao = new GradeDao();
                 int pa = Integer.parseInt(request.getParameter("page"));
                 int pagenum = gdao.getGradeNum();
                 ArrayList<Grades> gras = gdao.getGradeList(pa);
@@ -89,7 +100,7 @@
                 <td style="padding-top: 17px;"><%=gra.getGradeName() %>
                 </td>
                 <td>
-                    <a href="<%=request.getContextPath()%>/GradeServlet?method=toUpdate&id=<%=gra.getGradeNo()%>" >
+                    <a href="<%=request.getContextPath()%>/GradeServlet?method=toUpdate&id=<%=gra.getGradeNo()%>">
                         <button type="button"
                                 class="btn btn-primary">修改
                         </button>
@@ -104,33 +115,39 @@
         </table>
         <nav aria-label="Page navigation">
             <ul class="pagination">
-                <%if(pa!=1) {%>
+                <%if (pa != 1) {%>
                 <li>
                     <a href="<%=request.getContextPath()%>/view/grades.jsp?page=<%=pa-1%>" aria-label="Previous">
                         <span aria-hidden="true">&laquo;</span>
                     </a>
                 </li>
-                <%}else{%>
+                <%} else {%>
                 <li class="disabled">
                     <a href="" aria-label="Previous">
                         <span aria-hidden="true">&laquo;</span>
                     </a>
                 </li>
-                <%}
-                    for(int i=1;i<=pagenum;i++){
-                        if (pa==i){
+                <%
+                    }
+                    for (int i = 1; i <= pagenum; i++) {
+                        if (pa == i) {
                 %>
-                <li class="active"><a href="<%=request.getContextPath()%>/view/grades.jsp?page=<%=i%>"><%=i%></a></li>
-                <%}else{%>
-                <li><a href="<%=request.getContextPath()%>/view/grades.jsp?page=<%=i%>"><%=i%></a></li>
-                <%}}%>
-                <%if(pa!=pagenum){%>
+                <li class="active"><a href="<%=request.getContextPath()%>/view/grades.jsp?page=<%=i%>"><%=i%>
+                </a></li>
+                <%} else {%>
+                <li><a href="<%=request.getContextPath()%>/view/grades.jsp?page=<%=i%>"><%=i%>
+                </a></li>
+                <%
+                        }
+                    }
+                %>
+                <%if (pa != pagenum) {%>
                 <li>
                     <a href="<%=request.getContextPath()%>/view/grades.jsp?page=<%=pa+1%>" aria-label="Next">
                         <span aria-hidden="true">&raquo;</span>
                     </a>
                 </li>
-                <%}else{%>
+                <%} else {%>
                 <li class="disabled">
                     <a href="" aria-label="Next">
                         <span aria-hidden="true">&raquo;</span>
@@ -145,10 +162,12 @@
 <script src="../js/bootstrap.min.js"></script>
 <script type="text/javascript">
     var id = 0;
+
     function aaa(e) {
         console.log(e);
         id = e;
     }
+
     function go() {
         window.location.href = '<%=request.getContextPath()%>/GradeServlet?method=delete&id=' + id;
     }

@@ -42,7 +42,17 @@
         </div>
         <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav navbar-right">
-                <li><a href=""><%=session.getAttribute("account").toString()%></a></li>
+                <li>
+                    <a href=""><%
+                        try {
+                            String name = session.getAttribute("name").toString();
+                            out.print(name);
+                        } catch (Exception e) {
+                            e.printStackTrace();
+                            response.sendRedirect(request.getContextPath() + "/view/login.jsp?flag=3");
+                        }
+                    %></a>
+                </li>
                 <li><a href="<%=request.getContextPath()%>/view/login.jsp">退出</a></li>            </ul>
         </div>
     </div>
