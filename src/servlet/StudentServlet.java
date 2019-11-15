@@ -41,7 +41,7 @@ public class StudentServlet extends HttpServlet {
         String path = request.getContextPath();
         StudentDao sdao = new StudentDao();
         if(sdao.deleteStudent(id)){
-            response.sendRedirect(path + "/view/students.jsp");
+            response.sendRedirect(path + "/view/students.jsp?page=1");
         }
         else{
             request.getSession().setAttribute("message","删除失败,存在外键");
@@ -80,7 +80,7 @@ public class StudentServlet extends HttpServlet {
             s.setGender(1);
         }
         if(sdao.updateStudent(StudentNO,s)){
-            response.sendRedirect(path +"/view/students.jsp");
+            response.sendRedirect(path +"/view/students.jsp?page=1");
         }
         else{
             request.getSession().setAttribute("message","更新失败");
@@ -113,7 +113,7 @@ public class StudentServlet extends HttpServlet {
             s.setGender(1);
         }
         if(sdao.insertStudent(s)) {
-            response.sendRedirect(path + "/view/students.jsp");
+            response.sendRedirect(path + "/view/students.jsp?page=1");
         }
         else {
             request.getSession().setAttribute("message","添加失败");

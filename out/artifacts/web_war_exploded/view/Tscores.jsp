@@ -29,7 +29,7 @@
         <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav navbar-right">
                 <li>
-                    <a href=""><%
+                    <<a href="<%=request.getContextPath()%>/view/password.jsp?flag=0&type=teacher"><%
                         try {
                             String name = session.getAttribute("name").toString();
                             out.print(name);

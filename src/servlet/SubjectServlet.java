@@ -44,7 +44,7 @@ public class SubjectServlet extends HttpServlet {
         String path = request.getContextPath();
         SubjectDao sdao = new SubjectDao();
         sdao.deleteSubject(id);
-        response.sendRedirect(path + "/view/subjects.jsp");
+        response.sendRedirect(path + "/view/subjects.jsp?page=1");
     }
     private void toUpdateSubject(HttpServletRequest request, HttpServletResponse response) throws IOException{
         String id = request.getParameter("id");
@@ -68,7 +68,7 @@ public class SubjectServlet extends HttpServlet {
         s.setGradeName(gradename);
         s.setGradeNo(Long.parseLong(gdao.getGradeNO(gradename)));
         if(sdao.updateSubject(GradeNO,s)){
-            response.sendRedirect(path +"/view/subjects.jsp");
+            response.sendRedirect(path +"/view/subjects.jsp?page=1");
         }
         else{
             request.getSession().setAttribute("message","更新失败");
@@ -91,7 +91,7 @@ public class SubjectServlet extends HttpServlet {
         s.setGradeName(gradename);
         s.setGradeNo(Long.parseLong(gdao.getGradeNO(gradename)));
         if(sdao.insertSubject(s)){
-            response.sendRedirect(path + "/view/subjects.jsp");
+            response.sendRedirect(path + "/view/subjects.jsp?page=1");
         }
         else{
             request.getSession().setAttribute("message","添加失败");

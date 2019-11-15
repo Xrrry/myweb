@@ -32,7 +32,7 @@ public class ScoreServlet extends HttpServlet {
         String path = request.getContextPath();
         ScoreDao sdao = new ScoreDao();
         sdao.deleteScore(id);
-        response.sendRedirect(path + "/view/scores.jsp");
+        response.sendRedirect(path + "/view/scores.jsp?page=1");
     }
     private void toUpdateScore(HttpServletRequest request, HttpServletResponse response) throws IOException{
         String id = request.getParameter("id");
@@ -51,7 +51,7 @@ public class ScoreServlet extends HttpServlet {
         String ScoreId = String.valueOf(scores.getScoreId());
         s.setScore(Integer.parseInt(transform("score",request)));
         if(sdao.updateScore(ScoreId,s)){
-            response.sendRedirect(path +"/view/scores.jsp");
+            response.sendRedirect(path +"/view/scores.jsp?page=1");
         }
         else{
             request.getSession().setAttribute("message","更新失败");

@@ -24,7 +24,7 @@
         <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav navbar-right">
                 <li>
-                    <a href=""><%
+                    <a href="<%=request.getContextPath()%>/view/password.jsp?flag=0&type=admin"><%
                         try {
                             String name = session.getAttribute("name").toString();
                             out.print(name);
@@ -45,15 +45,15 @@
     <div class="row">
         <div class="sidebar col-sm-3 col-md-2">
             <ul class="nav nav-sidebar">
-                <li><a href="students.jsp">学生列表</a></li>
-                <li class="active"><a href="grades.jsp">院系列表<span
+                <li><a href="students.jsp?page=1">学生列表</a></li>
+                <li class="active"><a href="grades.jsp?page=1">院系列表<span
                         class="sr-only">(current)</span></a></li>
-                <li><a href="teachers.jsp">教师列表</a></li>
-                <li><a href="subjects.jsp">课程列表</a></li>
+                <li><a href="teachers.jsp?page=1">教师列表</a></li>
+                <li><a href="subjects.jsp?page=1">课程列表</a></li>
             </ul>
             <ul class="nav nav-sidebar">
-                <li><a href="choose.jsp">选课列表</a></li>
-                <li><a href="scores.jsp">成绩列表</a></li>
+                <li><a href="choose.jsp?page=1">选课列表</a></li>
+                <li><a href="scores.jsp?page=1">成绩列表</a></li>
             </ul>
         </div>
         <div>

@@ -35,7 +35,7 @@ public class GradeServlet extends HttpServlet {
         String path = request.getContextPath();
         GradeDao gdao = new GradeDao();
         gdao.deleteGrade(id);
-        response.sendRedirect(path + "/view/grades.jsp");
+        response.sendRedirect(path + "/view/grades.jsp?page=1");
     }
     private void toUpdateGrade(HttpServletRequest request, HttpServletResponse response) throws IOException{
         String id = request.getParameter("id");
@@ -54,7 +54,7 @@ public class GradeServlet extends HttpServlet {
         String GradeNO = String.valueOf(grades.getGradeNo());
         g.setGradeName(transform("name",request));
         if(gdao.updateGrade(GradeNO,g)){
-            response.sendRedirect(path +"/view/grades.jsp");
+            response.sendRedirect(path +"/view/grades.jsp?page=1");
         }
         else{
             request.getSession().setAttribute("message","更新失败");
@@ -72,7 +72,7 @@ public class GradeServlet extends HttpServlet {
         String path = request.getContextPath();
         g.setGradeName(transform("name",request));
         if(gdao.insertGrade(g)) {
-            response.sendRedirect(path + "/view/grades.jsp");
+            response.sendRedirect(path + "/view/grades.jsp?page=1");
         }
         else{
             request.getSession().setAttribute("message","添加失败");

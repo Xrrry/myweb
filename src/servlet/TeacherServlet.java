@@ -35,7 +35,7 @@ public class TeacherServlet extends HttpServlet {
         String path = request.getContextPath();
         TeacherDao tdao = new TeacherDao();
         tdao.deleteTeacher(id);
-        response.sendRedirect(path + "/view/teachers.jsp");
+        response.sendRedirect(path + "/view/teachers.jsp?page=1");
     }
     private void toUpdateTeacher(HttpServletRequest request, HttpServletResponse response) throws IOException{
         String id = request.getParameter("id");
@@ -58,7 +58,7 @@ public class TeacherServlet extends HttpServlet {
         t.setGradeName(gradename);
         t.setGradeNo(Long.parseLong(gdao.getGradeNO(gradename)));
         if(tdao.updateTeacher(TeacherNO,t)){
-            response.sendRedirect(path +"/view/teachers.jsp");
+            response.sendRedirect(path +"/view/teachers.jsp?page=1");
         }
         else{
             request.getSession().setAttribute("message","更新失败");
@@ -80,7 +80,7 @@ public class TeacherServlet extends HttpServlet {
         t.setGradeName(gradename);
         t.setGradeNo(Long.parseLong(gdao.getGradeNO(gradename)));
         if(tdao.insertTeacher(t)) {
-            response.sendRedirect(path + "/view/teachers.jsp");
+            response.sendRedirect(path + "/view/teachers.jsp?page=1");
         }
         else{
             request.getSession().setAttribute("message","添加失败");
