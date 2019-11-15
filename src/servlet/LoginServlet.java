@@ -37,6 +37,7 @@ public class LoginServlet extends HttpServlet {
             response.sendRedirect(path + "/view/login.jsp?flag=1");
             return;
         }
+        session.setAttribute("account",account);
         if(ldao.Validate(account,password,request,String.valueOf(type)) == 1) {
             switch (type) {
                 case 0:

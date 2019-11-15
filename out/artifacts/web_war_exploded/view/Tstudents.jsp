@@ -8,6 +8,12 @@
     <title>学生列表</title>
     <link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css"/>
     <link rel="stylesheet" type="text/css" href="../css/dashboard.css"/>
+    <script>
+        var flag = '<%=request.getParameter("flag")%>';
+        if (flag == '1') {
+            alert("密码修改成功");
+        }
+    </script>
 </head>
 <body>
 <nav class="navbar navbar-inverse navbar-fixed-top">
@@ -25,7 +31,7 @@
         <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav navbar-right">
                 <li>
-                    <a href=""><%
+                    <a href="<%=request.getContextPath()%>/view/password.jsp?flag=0&type=teacher"><%
                         try {
                             String name = session.getAttribute("name").toString();
                             out.print(name);

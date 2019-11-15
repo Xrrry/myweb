@@ -32,6 +32,9 @@ public class StudentServlet extends HttpServlet {
         else if("insert".equals(method)){
             insertStudent(request,response);
         }
+        else if("change".equals(method)){
+            changePassword(request,response);
+        }
     }
     private void deleteStudent(HttpServletRequest request, HttpServletResponse response) throws IOException {
         String id = request.getParameter("id");
@@ -115,6 +118,28 @@ public class StudentServlet extends HttpServlet {
         else {
             request.getSession().setAttribute("message","添加失败");
             response.sendRedirect(path + "/view/error.jsp");
+        }
+    }
+    private void changePassword(HttpServletRequest request, HttpServletResponse response) throws IOException {
+        String path = request.getContextPath();
+        HttpSession session = request.getSession();
+        StudentDao sdao = new StudentDao();
+        String p1 = request.getParameter("p1");
+        String p2 = request.getParameter("p2");
+        String type = request.getParameter("type");
+        if(p1.equals(p2)){
+            if(sdao.changePassword(session.getAttribute("account").toString(),p1)) {
+                if("admin".equals(type)){
+                    response.sendRedirect(path + "/view/students.jsp?page=1&flag=1");
+                }else if("teacher".equals(type)){
+                    response.sendRedirect(path + "/view/Tstudents.jsp?flag=1");
+                }else if("student".equals(type)){
+                    response.sendRedirect(path + "/view/Psubjects.jsp?flag=1");
+                }
+            }
+        }
+        else {
+            response.sendRedirect(path + "/view/password.jsp?flag=1&type=" + type);
         }
     }
 }

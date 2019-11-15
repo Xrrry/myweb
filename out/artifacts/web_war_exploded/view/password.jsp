@@ -1,15 +1,20 @@
-<%@ page import="bean.Subjects" %>
+<%@ page import="bean.Students" %>
 <%@ page import="dao.GradeDao" %>
 <%@ page import="bean.Grades" %>
 <%@ page import="java.util.ArrayList" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>添加课程信息</title>
+    <title>修改学生信息</title>
     <link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css"/>
     <link rel="stylesheet" type="text/css" href="../css/dashboard.css"/>
     <link rel="stylesheet" type="text/css" href="../css/signin.css"/>
-
+    <script>
+        var flag = '<%=request.getParameter("flag")%>';
+        if (flag == '1') {
+            alert("两次密码不相同");
+        }
+    </script>
 </head>
 <body style="background-color:#fff">
 <nav class="navbar navbar-inverse navbar-fixed-top">
@@ -27,7 +32,7 @@
         <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav navbar-right">
                 <li>
-                    <a href="<%=request.getContextPath()%>/view/password.jsp?flag=0&type=admin"><%
+                    <a href=""><%
                         try {
                             String name = session.getAttribute("name").toString();
                             out.print(name);
@@ -46,58 +51,33 @@
 
 <div class="container-fluid">
     <div class="row">
-        <div class="sidebar col-sm-3 col-md-2">
-            <ul class="nav nav-sidebar">
-                <li><a href="students.jsp">学生列表</a></li>
-                <li><a href="grades.jsp">院系列表</a></li>
-                <li><a href="teachers.jsp">教师列表</a></li>
-                <li class="active"><a href="subjects.jsp">课程列表<span
-                        class="sr-only">(current)</span></a></li>
-            </ul>
-            <ul class="nav nav-sidebar">
-                <li><a href="choose.jsp">选课列表</a></li>
-                <li><a href="scores.jsp">成绩列表</a></li>
-            </ul>
-        </div>
         <div>
-            <form method="post" action="<%=request.getContextPath()%>/SubjectServlet?method=insert">
+            <form method="post" action="<%=request.getContextPath()%>/StudentServlet?method=change&type=<%=request.getParameter("type")%>">
                 <%
-                    Subjects s = (Subjects) session.getAttribute("subject");
+                    Students s = (Students) session.getAttribute("student");
                 %>
                 <h2 class="form-signin-heading"
                     style="max-width: 400px;margin: auto;padding-left: 12px;padding-top: 50px;padding-bottom: 20px;">
-                    添加课程信息
+                    修改密码
                 </h2>
+
                 <div class="input-group form-signin" style="max-width: 400px;">
-                    <span class="input-group-addon">课程名称</span>
-                    <input name="name" type="text" class="form-control" placeholder="课程名称" required><br>
-                </div>
-                <div class="input-group form-signin" style="max-width: 400px;">
-                    <span class="input-group-addon">课时</span>
-                    <input name="hour" type="text" class="form-control" placeholder="课时" required><br>
+                    <span class="input-group-addon">密码</span>
+                    <input name="p1" type="password" class="form-control" placeholder="密码" required><br>
                 </div>
 
                 <div class="input-group form-signin" style="max-width: 400px;">
-                    <span class="input-group-addon">院系</span>
-                    <select name="gradename" class="form-control">
-                        <%
-                            GradeDao gdao = new GradeDao();
-                            ArrayList<Grades> gras = gdao.getGradeListAll();
-                            for (int i = 0; i < gras.size(); i++) {
-                                Grades gra = (Grades) gras.get(i);
-                        %>
-                        <option><%=gra.getGradeName()%></option>
-                        <% } %>
-                    </select>
+                    <span class="input-group-addon">确认密码</span>
+                    <input name="p2" type="password" class="form-control" placeholder="确认密码" required><br>
                 </div>
 
                 <input style="margin-top:15px;max-width: 370px;" id="btn-submit" type="submit"
-                       class="btn btn-big btn-block form-signin" value="添加">
+                       class="btn btn-big btn-block form-signin" value="修改">
             </form>
         </div>
     </div>
 </div>
-<script type="text/javascript" src="../js/dropdown.js" ></script>
+<script type="text/javascript" src="../js/dropdown.js"></script>
 <script type="text/javascript" src="../js/tooltip.js"></script>
 <script type="text/javascript" src="../js/popover.js"></script>
 <script src="../js/jquery-3.4.1.min.js"></script>

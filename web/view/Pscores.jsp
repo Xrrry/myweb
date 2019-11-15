@@ -33,7 +33,7 @@
                 %>
                 <li><a href=""><%=sall.getGradeName()%></a></li>
                 <li><a href=""><%=sall.getIdCardNo()%></a></li>
-                <li><a href=""><%=session.getAttribute("name").toString()%></a></li>
+                <li><a href="<%=request.getContextPath()%>/view/password.jsp?flag=0&type=student"><%=session.getAttribute("name").toString()%></a></li>
                 <li><a href="<%=request.getContextPath()%>/view/login.jsp">退出</a></li>            </ul>
         </div>
     </div>

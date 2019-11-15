@@ -190,4 +190,12 @@ public class StudentDao extends BaseDao{
             closeCon();
         }
     }
+    public boolean changePassword(String account,String password) {
+        String sql = "update users set password = '" + password +"' where Account = '" + account + "'";
+        try {
+            return update(sql);
+        }finally {
+            closeCon();
+        }
+    }
 }

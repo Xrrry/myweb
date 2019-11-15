@@ -45,7 +45,7 @@
                 <li>
                     <a href=""><%
                         try {
-                            String name = session.getAttribute("account").toString();
+                            String name = session.getAttribute("name").toString();
                             out.print(name);
                         } catch (Exception e) {
                             e.printStackTrace();
