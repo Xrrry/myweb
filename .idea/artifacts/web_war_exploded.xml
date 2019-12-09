@@ -7,6 +7,9 @@
         <element id="directory" name="classes">
           <element id="module-output" name="myweb" />
         </element>
+        <element id="directory" name="lib">
+          <element id="file-copy" path="$USER_HOME$/Documents/Tencent Files/914155308/FileRecv/mysql-connector-java-5.1.47.jar" />
+        </element>
       </element>
     </root>
   </artifact>

@@ -30,7 +30,6 @@ public class LoginServlet extends HttpServlet {
         session.setAttribute("account",account);
         String randStr = (String)session.getAttribute("randStr");
         response.setCharacterEncoding("UTF-8");
-//        PrintWriter out = response.getWriter();
         LoginDao ldao = new LoginDao();
         if(!code.equals(randStr)) {
             System.out.println('4');

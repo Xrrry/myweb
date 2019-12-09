@@ -10,7 +10,7 @@
     <link rel="stylesheet" type="text/css" href="../css/dashboard.css"/>
     <script>
         var flag = '<%=request.getParameter("flag")%>';
-        if (flag == '1') {
+        if (flag === '1') {
             alert("密码修改成功");
         }
     </script>
@@ -221,12 +221,10 @@
 <script src="../js/bootstrap.min.js"></script>
 <script type="text/javascript">
     var id = 0;
-
     function aaa(e) {
         console.log(e);
         id = e;
     }
-
     function go() {
         window.location.href = '<%=request.getContextPath()%>/StudentServlet?method=delete&id=' + id;
     }
