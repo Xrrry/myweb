@@ -7,37 +7,32 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3a22c3d3-d83d-4ad8-8e65-21c24f379381" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/lombok.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/lombok.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/lombok.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/lombok.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myweb.iml" beforeDir="false" afterPath="$PROJECT_DIR$/myweb.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/WEB-INF/classes/bean/Choose.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/web_war_exploded/WEB-INF/classes/bean/Choose.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/WEB-INF/classes/bean/Grades.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/web_war_exploded/WEB-INF/classes/bean/Grades.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/WEB-INF/classes/bean/Scores.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/web_war_exploded/WEB-INF/classes/bean/Scores.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/WEB-INF/classes/bean/Students.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/web_war_exploded/WEB-INF/classes/bean/Students.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/WEB-INF/classes/bean/Subjects.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/web_war_exploded/WEB-INF/classes/bean/Subjects.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/WEB-INF/classes/bean/Teachers.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/web_war_exploded/WEB-INF/classes/bean/Teachers.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/WEB-INF/classes/bean/Users.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/web_war_exploded/WEB-INF/classes/bean/Users.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/WEB-INF/classes/dao/DbUtil.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/web_war_exploded/WEB-INF/classes/dao/DbUtil.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/WEB-INF/classes/servlet/GradeServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/web_war_exploded/WEB-INF/classes/servlet/GradeServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/WEB-INF/classes/servlet/LoginServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/web_war_exploded/WEB-INF/classes/servlet/LoginServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/WEB-INF/classes/servlet/ScoreServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/web_war_exploded/WEB-INF/classes/servlet/ScoreServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/WEB-INF/classes/servlet/SearchServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/web_war_exploded/WEB-INF/classes/servlet/SearchServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/WEB-INF/classes/servlet/StudentServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/web_war_exploded/WEB-INF/classes/servlet/StudentServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/WEB-INF/classes/servlet/SubjectServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/web_war_exploded/WEB-INF/classes/servlet/SubjectServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/WEB-INF/classes/servlet/TeacherServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/web_war_exploded/WEB-INF/classes/servlet/TeacherServlet.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/web_war_exploded/WEB-INF/web.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/myweb/bean/Choose.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/myweb/bean/Choose.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/myweb/bean/Grades.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/myweb/bean/Grades.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/myweb/bean/Scores.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/myweb/bean/Scores.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/myweb/bean/Students.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/myweb/bean/Students.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/myweb/bean/Subjects.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/myweb/bean/Subjects.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/myweb/bean/Teachers.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/myweb/bean/Teachers.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/myweb/bean/Users.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/myweb/bean/Users.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/myweb/dao/DbUtil.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/myweb/dao/DbUtil.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/bean/Choose.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/bean/Choose.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/bean/Grades.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/bean/Grades.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/bean/Scores.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/bean/Scores.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/bean/Students.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/bean/Students.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/bean/Subjects.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/bean/Subjects.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/bean/Teachers.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/bean/Teachers.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/bean/Users.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/bean/Users.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/dao/DbUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dao/DbUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/myweb/servlet/GradeServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/myweb/servlet/GradeServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/myweb/servlet/LoginServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/myweb/servlet/LoginServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/myweb/servlet/ScoreServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/myweb/servlet/ScoreServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/myweb/servlet/SearchServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/myweb/servlet/SearchServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/myweb/servlet/StudentServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/myweb/servlet/StudentServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/myweb/servlet/SubjectServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/myweb/servlet/SubjectServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/myweb/servlet/TeacherServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/myweb/servlet/TeacherServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/servlet/GradeServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/servlet/GradeServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/servlet/LoginServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/servlet/LoginServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/servlet/ScoreServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/servlet/ScoreServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/servlet/SearchServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/servlet/SearchServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/servlet/StudentServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/servlet/StudentServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/servlet/SubjectServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/servlet/SubjectServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/servlet/TeacherServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/servlet/TeacherServlet.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/web.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/lombok.jar" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -124,25 +119,22 @@
   <component name="PropertiesComponent">
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="DatabaseDriversLRU" value="sqlserver&#10;mysql" />
+    <property name="Downloaded.Files.Path.Enabled" value="false" />
+    <property name="Repository.Attach.Annotations" value="false" />
+    <property name="Repository.Attach.JavaDocs" value="false" />
+    <property name="Repository.Attach.Sources" value="false" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="com.intellij.ide.scratch.LRUPopupBuilder$1/New Scratch File" value="Lombok.Config&#10;SQL" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../demo" />
-    <property name="project.structure.last.edited" value="Project" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Downloads/lombok.jar!/" />
+    <property name="project.structure.last.edited" value="Artifacts" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\Admin\IdeaProjects\myweb\web" />
-      <recent name="C:\Users\Admin\IdeaProjects\myweb\web\css" />
-      <recent name="C:\Users\Admin\IdeaProjects\myweb\web\view" />
-      <recent name="C:\Users\Admin\IdeaProjects\myweb\web\page" />
-      <recent name="C:\Users\Admin\IdeaProjects\myweb\src" />
-    </key>
     <key name="CreateClassDialog.RecentsKey">
       <recent name="bean" />
     </key>
@@ -152,6 +144,13 @@
       <recent name="C:\Users\Admin\IdeaProjects\myweb\web\js" />
       <recent name="C:\Users\Admin\IdeaProjects\myweb\web" />
       <recent name="C:\Users\Admin\IdeaProjects\myweb\web\view" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Admin\IdeaProjects\myweb\web" />
+      <recent name="C:\Users\Admin\IdeaProjects\myweb\web\WEB-INF\lib" />
+      <recent name="C:\Users\Admin\IdeaProjects\myweb\web\css" />
+      <recent name="C:\Users\Admin\IdeaProjects\myweb\web\view" />
+      <recent name="C:\Users\Admin\IdeaProjects\myweb\web\page" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -312,8 +311,17 @@
       <workItem from="1575801122028" duration="5918000" />
       <workItem from="1575859000993" duration="1355000" />
       <workItem from="1598581771147" duration="548000" />
-      <workItem from="1598582344292" duration="2296000" />
+      <workItem from="1598582344292" duration="5360000" />
+      <workItem from="1598598976995" duration="3847000" />
     </task>
+    <task id="LOCAL-00001" summary="遗留修改">
+      <created>1598584703748</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1598584703748</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -334,5 +342,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="遗留修改" />
+    <option name="LAST_COMMIT_MESSAGE" value="遗留修改" />
   </component>
 </project>

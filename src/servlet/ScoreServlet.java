@@ -4,6 +4,7 @@ import bean.Scores;
 import dao.ScoreDao;
 import dao.TeacherDao;
 
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -11,6 +12,7 @@ import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
 
+@WebServlet(name = "ScoreServlet", urlPatterns = {"/ScoreServlet"})
 public class ScoreServlet extends HttpServlet {
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
         doPost(request, response);
